@@ -4,7 +4,6 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import clsx from "clsx";
-import MagneticButton from "../MagneticButton";
 
 const FRAMES = [
   { id: "glossy", name: "Glossy Finish", img: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=400&auto=format&fit=crop" },

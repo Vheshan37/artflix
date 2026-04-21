@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 
 export default function ArtisanTouch() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -52,7 +51,7 @@ export default function ArtisanTouch() {
         <div ref={textColsRef} className="flex flex-col justify-center px-4 md:pl-20 md:pr-16">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-10 h-[1px] bg-gold" />
-            <span className="text-[9px] font-medium tracking-[0.4em] uppercase text-gold">The Artisan's Touch</span>
+            <span className="text-[9px] font-medium tracking-[0.4em] uppercase text-gold">The Artisan&apos;s Touch</span>
           </div>
           <h2 className="font-serif text-[clamp(38px,5vw,64px)] font-light leading-[1.15] text-ivory">
             Where vision<br /><em className="italic text-gold">becomes reality</em>

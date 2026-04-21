@@ -67,8 +67,8 @@ export default function Hero() {
           backgroundRepeat: "no-repeat"
         }}
       />
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-br from-obsidian/90 via-obsidian/60 to-obsidian/80" />
+      {/* Gradient Overlay — lighter so bg image shows through */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-br from-obsidian/65 via-obsidian/35 to-obsidian/55" />
 
       {/* Content */}
       <div ref={textContentRef} className="relative z-20 text-center max-w-[900px] px-10">
@@ -80,7 +80,7 @@ export default function Hero() {
         </h1>
         <div className="reveal-hero w-[60px] h-[1px] bg-gold mx-auto my-6" />
         <p className="reveal-hero font-serif text-lg font-light italic tracking-[0.12em] text-platinum mx-0 mt-7 mb-12">
-          Let's Frame Your Memorable Moment
+          Let&apos;s Frame Your Memorable Moment
         </p>
         <div className="reveal-hero">
           <MagneticButton href="#catalogue">Explore Creations</MagneticButton>

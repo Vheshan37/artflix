@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import ArtisanTouch from "@/components/sections/ArtisanTouch";
 import Services from "@/components/sections/Services";
+import AlbumView from "@/components/sections/AlbumView";
 import Footer from "@/components/sections/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <ArtisanTouch />
       <Services />
+      <AlbumView />
       <Footer />
     </main>
   );
