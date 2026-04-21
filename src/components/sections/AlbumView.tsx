@@ -268,6 +268,27 @@ export default function AlbumView() {
     return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, []);
 
+  // Center the book smoothly based on whether it is closed or open
+  useEffect(() => {
+    let xPercent = 0;
+    if (currentPage === 0) {
+      // Cover page (book closed on the right side) -> shift container left to center the visible cover
+      xPercent = -25;
+    } else if (currentPage >= totalPages - 1) {
+      // Back cover (book closed on the left side) -> shift container right to center it
+      xPercent = 25;
+    } else {
+      // Book is open -> center normally
+      xPercent = 0;
+    }
+
+    gsap.to(".book-centering-container", {
+      xPercent: xPercent,
+      duration: 0.9,
+      ease: "power3.inOut"
+    });
+  }, [currentPage, totalPages]);
+
   return (
     <section
       ref={sectionRef}
@@ -293,9 +314,9 @@ export default function AlbumView() {
       </div>
 
       {/* Book */}
-      <div className="album-book-wrapper flex flex-col items-center gap-10">
+      <div className="album-book-wrapper flex flex-col items-center gap-10 overflow-hidden px-4 md:px-0">
         <div
-          className="w-full max-w-[960px] mx-auto"
+          className="book-centering-container w-full max-w-[960px] mx-auto"
           style={{
             filter: "drop-shadow(0 40px 80px rgba(0,0,0,0.85))",
           }}
