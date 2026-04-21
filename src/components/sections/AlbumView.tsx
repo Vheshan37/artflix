@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import ShinyText from "../ShinyText";
 // Local interface since the package doesn't export the ref type
 interface FlipBookRef {
   flipNext: () => void;
@@ -362,7 +363,7 @@ export default function AlbumView() {
             className="flex items-center gap-3 text-[10px] tracking-[0.25em] uppercase text-platinum/60 hover:text-gold transition-all duration-300 group"
           >
             <span className="inline-block w-8 h-[1px] bg-current transition-all duration-300 group-hover:w-12" />
-            Prev
+            <ShinyText text="Prev" speed={3} color="inherit" shineColor="#f0d890" />
           </button>
 
           {/* Page dots */}
@@ -384,7 +385,7 @@ export default function AlbumView() {
             onClick={() => bookRef.current?.flipNext()}
             className="flex items-center gap-3 text-[10px] tracking-[0.25em] uppercase text-platinum/60 hover:text-gold transition-all duration-300 group"
           >
-            Next
+            <ShinyText text="Next" speed={3} color="inherit" shineColor="#f0d890" />
             <span className="inline-block w-8 h-[1px] bg-current transition-all duration-300 group-hover:w-12" />
           </button>
         </div>

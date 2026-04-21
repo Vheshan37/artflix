@@ -57,7 +57,9 @@ export default function ArtisanTouch() {
             Where vision<br /><em className="italic text-gold">becomes reality</em>
           </h2>
           <p className="text-[15px] leading-[1.85] text-platinum/75 font-light max-w-[440px] mt-8">
-            Every photograph that enters our studio is treated as a singular artefact. Our digital master editors apply years of expertise — calibrating light, shadow, and tone to ensure your memory is beautifully immortalized.
+            We don&apos;t just print photos; we curate memories with an artisan&apos;s eye. 
+            Through heritage-grade lamination and meticulous digital retouching, 
+            each piece becomes a legacy.
           </p>
           <div className="w-12 h-[1px] bg-gold my-9" />
           <p className="text-[15px] leading-[1.85] text-platinum/75 font-light mt-0 max-w-[440px]">
