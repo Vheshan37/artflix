@@ -40,14 +40,18 @@ export default function Hero() {
 
     // Text Reveal Animation
     const q = gsap.utils.selector(textContentRef);
-    gsap.from(q(".reveal-hero"), {
-      opacity: 0,
-      y: 50,
-      duration: 1.4,
-      stagger: 0.15,
-      ease: "power3.out",
-      delay: 0.4
-    });
+    gsap.fromTo(
+      q(".reveal-hero"),
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.4,
+        stagger: 0.15,
+        ease: "power3.out",
+        delay: 0.4,
+      }
+    );
 
     return () => {
       ScrollTrigger.getAll().forEach(t => t.kill());
@@ -68,7 +72,7 @@ export default function Hero() {
         }}
       />
       {/* Gradient Overlay — lighter so bg image shows through */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-br from-obsidian/65 via-obsidian/35 to-obsidian/55" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-br from-obsidian/40 via-obsidian/10 to-obsidian/30" />
 
       {/* Content */}
       <div ref={textContentRef} className="relative z-20 text-center max-w-[900px] px-10">

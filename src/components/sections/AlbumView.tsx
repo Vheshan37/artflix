@@ -265,28 +265,6 @@ export default function AlbumView() {
       { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power4.out" },
       "-=0.6"
     );
-    // Scroll-jacking album flipping
-    const maxSpreads = Math.ceil(totalPages / 2) - 1;
-    let lastSpread = 0;
-
-    ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: "center center",
-      end: `+=${maxSpreads * 450}`, // 450px scrolling per spread
-      pin: true,
-      onUpdate: (self) => {
-        // Calculate the target spread based on scroll progress
-        const currentSpread = Math.round(self.progress * maxSpreads);
-        
-        // Only trigger the flip animation if the target spread changes
-        if (currentSpread !== lastSpread) {
-          lastSpread = currentSpread;
-          // Flip to the correct target page (each spread consists of 2 pages)
-          bookRef.current?.flip(currentSpread * 2);
-        }
-      }
-    });
-
     return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, []);
 
