@@ -61,11 +61,11 @@ const PHOTOS = [
 ];
 
 // Leather cover page
-const CoverPage = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
+const CoverPage = React.forwardRef<HTMLDivElement, Record<string, never>>((props, ref) => {
   return (
     <div
       ref={ref}
-      className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden select-none"
+      className="page w-full h-full flex flex-col items-center justify-center relative overflow-hidden select-none"
       style={{
         background:
           "linear-gradient(145deg, #2e1407 0%, #5c2e10 30%, #7a3d18 50%, #5c2e10 70%, #2e1407 100%)",
@@ -153,6 +153,7 @@ const CoverPage = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
     </div>
   );
 });
+CoverPage.displayName = "CoverPage";
 
 // Aged paper photo page
 const PhotoPage = React.forwardRef<HTMLDivElement, { img: string; caption: string; year: string }>(
@@ -160,76 +161,78 @@ const PhotoPage = React.forwardRef<HTMLDivElement, { img: string; caption: strin
     return (
       <div
         ref={ref}
-      className="w-full h-full p-7 flex flex-col justify-between select-none"
-      style={{
-        background: "linear-gradient(135deg, #f5ede0, #ede0cc, #f0e4d0)",
-      }}
-    >
-      {/* Noise overlay */}
-      <div
-        className="absolute inset-0 opacity-20 pointer-events-none"
+        className="page w-full h-full p-7 flex flex-col justify-between select-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")`,
-          backgroundSize: "250px 250px",
-          mixBlendMode: "multiply",
-        }}
-      />
-
-      {/* Photo with white border */}
-      <div
-        className="relative flex-1 overflow-hidden"
-        style={{
-          border: "10px solid #fff",
-          boxShadow: "0 3px 18px rgba(0,0,0,0.2), inset 0 0 0 1px rgba(0,0,0,0.07)",
+          background: "linear-gradient(135deg, #f5ede0, #ede0cc, #f0e4d0)",
         }}
       >
+        {/* Noise overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            backgroundImage: `url('${img}')`,
-            filter: "sepia(18%) contrast(1.05) brightness(0.95)",
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")`,
+            backgroundSize: "250px 250px",
+            mixBlendMode: "multiply",
           }}
         />
-        {/* Photo corner tabs */}
-        {[
-          { cls: "top-1.5 left-1.5", clip: "polygon(0 0, 100% 0, 0 100%)" },
-          { cls: "top-1.5 right-1.5", clip: "polygon(0 0, 100% 0, 100% 100%)" },
-          { cls: "bottom-1.5 left-1.5", clip: "polygon(0 0, 0 100%, 100% 100%)" },
-          { cls: "bottom-1.5 right-1.5", clip: "polygon(100% 0, 0 100%, 100% 100%)" },
-        ].map((c, i) => (
-          <div
-            key={i}
-            className={`absolute ${c.cls} w-5 h-5`}
-            style={{ background: "rgba(180,140,60,0.7)", clipPath: c.clip }}
-          />
-        ))}
-      </div>
 
-      {/* Caption */}
-      <div className="mt-4 text-center relative z-10 flex-shrink-0">
-        <p
-          className="text-[13px] tracking-[0.1em] italic"
-          style={{ fontFamily: "Georgia, serif", color: "#5c3d1e" }}
+        {/* Photo with white border */}
+        <div
+          className="relative flex-1 overflow-hidden"
+          style={{
+            border: "10px solid #fff",
+            boxShadow: "0 3px 18px rgba(0,0,0,0.2), inset 0 0 0 1px rgba(0,0,0,0.07)",
+          }}
         >
-          {caption}
-        </p>
-        <p
-          className="text-[10px] tracking-[0.25em] mt-1 opacity-45"
-          style={{ fontFamily: "Georgia, serif", color: "#8b5e3c" }}
-        >
-          {year}
-        </p>
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('${img}')`,
+              filter: "sepia(18%) contrast(1.05) brightness(0.95)",
+            }}
+          />
+          {/* Photo corner tabs */}
+          {[
+            { cls: "top-1.5 left-1.5", clip: "polygon(0 0, 100% 0, 0 100%)" },
+            { cls: "top-1.5 right-1.5", clip: "polygon(0 0, 100% 0, 100% 100%)" },
+            { cls: "bottom-1.5 left-1.5", clip: "polygon(0 0, 0 100%, 100% 100%)" },
+            { cls: "bottom-1.5 right-1.5", clip: "polygon(100% 0, 0 100%, 100% 100%)" },
+          ].map((c, i) => (
+            <div
+              key={i}
+              className={`absolute ${c.cls} w-5 h-5`}
+              style={{ background: "rgba(180,140,60,0.7)", clipPath: c.clip }}
+            />
+          ))}
+        </div>
+
+        {/* Caption */}
+        <div className="mt-4 text-center relative z-10 flex-shrink-0">
+          <p
+            className="text-[13px] tracking-[0.1em] italic"
+            style={{ fontFamily: "Georgia, serif", color: "#5c3d1e" }}
+          >
+            {caption}
+          </p>
+          <p
+            className="text-[10px] tracking-[0.25em] mt-1 opacity-45"
+            style={{ fontFamily: "Georgia, serif", color: "#8b5e3c" }}
+          >
+            {year}
+          </p>
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
+PhotoPage.displayName = "PhotoPage";
 
 // Back cover (plain leather)
-const BackCover = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
+const BackCover = React.forwardRef<HTMLDivElement, Record<string, never>>((props, ref) => {
   return (
     <div
       ref={ref}
-      className="w-full h-full"
+      className="page w-full h-full"
       style={{
         background:
           "linear-gradient(145deg, #2e1407 0%, #5c2e10 40%, #3a1a08 100%)",
@@ -239,6 +242,7 @@ const BackCover = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
     </div>
   );
 });
+BackCover.displayName = "BackCover";
 
 export default function AlbumView() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -309,7 +313,7 @@ export default function AlbumView() {
             mobileScrollSupport={false}
             showNavigationButtons={false}
             showPageNumbers={false}
-            onPageChange={(e: any) => setCurrentPage(e.data)}
+            onPageChange={(page: number) => setCurrentPage(page)}
             className="mx-auto"
           >
             {/* Cover */}
