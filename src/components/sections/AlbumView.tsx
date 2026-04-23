@@ -354,8 +354,8 @@ export default function AlbumView() {
         </p>
       </div>
 
-      {/* Book */}
-      <div className="album-book-wrapper flex flex-col items-center gap-10 overflow-hidden px-4 md:px-0">
+      {/* Desktop 3D Book */}
+      <div className="album-book-wrapper hidden lg:flex flex-col items-center gap-10 overflow-hidden px-4 md:px-0">
         <div
           className="book-centering-container w-full max-w-[960px] mx-auto py-10"
           style={{
@@ -433,6 +433,48 @@ export default function AlbumView() {
         <p className="text-[9px] tracking-[0.3em] uppercase text-platinum/20">
           Click the corner or use buttons to turn pages
         </p>
+      </div>
+
+      {/* Mobile/Tablet Alternative Grid */}
+      <div className="flex lg:hidden flex-col gap-12 mt-4 px-2 sm:px-10">
+        {PHOTOS.map((photo, i) => (
+          <div 
+            key={i} 
+            className="relative w-full aspect-[4/5] bg-white p-3 shadow-2xl rounded-sm"
+          >
+            <img 
+              src={photo.img} 
+              alt={photo.caption} 
+              className="w-full h-full object-cover" 
+              style={{ filter: "sepia(18%) contrast(1.05) brightness(0.95)" }}
+              crossOrigin="anonymous" 
+            />
+            {/* Corner Tabs */}
+            {[
+              { cls: "top-3 left-3", clip: "polygon(0 0, 100% 0, 0 100%)" },
+              { cls: "top-3 right-3", clip: "polygon(0 0, 100% 0, 100% 100%)" },
+              { cls: "bottom-3 left-3", clip: "polygon(0 0, 0 100%, 100% 100%)" },
+              { cls: "bottom-3 right-3", clip: "polygon(100% 0, 0 100%, 100% 100%)" },
+            ].map((c, j) => (
+              <div
+                key={j}
+                className={`absolute ${c.cls} w-6 h-6`}
+                style={{ background: "rgba(180,140,60,0.7)", clipPath: c.clip }}
+              />
+            ))}
+            
+            {/* Elegant Mobile Caption */}
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-center w-[85%]">
+              <div 
+                className="bg-[#0A0A0A]/95 backdrop-blur-md px-6 py-4"
+                style={{ border: "1px solid rgba(212,175,85,0.2)" }}
+              >
+                <p className="text-[15px] italic text-[#d4af55] font-serif mb-1">{photo.caption}</p>
+                <p className="text-[9px] tracking-[0.3em] text-[#c8c0b4]/60">{photo.year}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
