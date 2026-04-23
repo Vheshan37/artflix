@@ -2,6 +2,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import ShinyText from "../ShinyText";
+import useEmblaCarousel from "embla-carousel-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Local interface since the package doesn't export the ref type
 interface FlipBookRef {
   flipNext: () => void;
@@ -9,8 +12,6 @@ interface FlipBookRef {
   flip: (page: number) => void;
   getCurrentPageIndex: () => number | undefined;
 }
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Dynamically import to avoid SSR issues with page-flip
 const ReactFlipBook = dynamic(
@@ -287,6 +288,12 @@ BackCover.displayName = "BackCover";
 
 export default function AlbumView() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [emblaRef] = useEmblaCarousel({ 
+    align: "center", 
+    containScroll: "trimSnaps",
+    dragFree: true,
+    loop: true,
+  });
   const bookRef = useRef<FlipBookRef | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = PHOTOS.length + 2; // cover + photos + back cover
@@ -329,6 +336,32 @@ export default function AlbumView() {
       ease: "power3.inOut"
     });
   }, [currentPage, totalPages]);
+
+  // Mobile Stack Animation
+  useEffect(() => {
+    const mm = gsap.matchMedia();
+    
+    mm.add("(max-width: 1023px)", () => {
+      const cards = gsap.utils.toArray(".mobile-stack-card") as HTMLElement[];
+      
+      cards.forEach((card, index) => {
+        if (index === cards.length - 1) return; // Last card doesn't scale down
+        
+        gsap.to(card, {
+          scale: 0.9,
+          filter: "brightness(0.5) blur(2px)",
+          scrollTrigger: {
+            trigger: cards[index + 1],
+            start: "top 60%",
+            end: "top 20%",
+            scrub: true,
+          }
+        });
+      });
+    });
+
+    return () => mm.revert();
+  }, []);
 
   return (
     <section
@@ -435,46 +468,59 @@ export default function AlbumView() {
         </p>
       </div>
 
-      {/* Mobile/Tablet Alternative Grid */}
-      <div className="flex lg:hidden flex-col gap-12 mt-4 px-2 sm:px-10">
-        {PHOTOS.map((photo, i) => (
-          <div 
-            key={i} 
-            className="relative w-full aspect-[4/5] bg-white p-3 shadow-2xl rounded-sm"
-          >
-            <img 
-              src={photo.img} 
-              alt={photo.caption} 
-              className="w-full h-full object-cover" 
-              style={{ filter: "sepia(18%) contrast(1.05) brightness(0.95)" }}
-              crossOrigin="anonymous" 
-            />
-            {/* Corner Tabs */}
-            {[
-              { cls: "top-3 left-3", clip: "polygon(0 0, 100% 0, 0 100%)" },
-              { cls: "top-3 right-3", clip: "polygon(0 0, 100% 0, 100% 100%)" },
-              { cls: "bottom-3 left-3", clip: "polygon(0 0, 0 100%, 100% 100%)" },
-              { cls: "bottom-3 right-3", clip: "polygon(100% 0, 0 100%, 100% 100%)" },
-            ].map((c, j) => (
-              <div
-                key={j}
-                className={`absolute ${c.cls} w-6 h-6`}
-                style={{ background: "rgba(180,140,60,0.7)", clipPath: c.clip }}
-              />
-            ))}
-            
-            {/* Elegant Mobile Caption */}
-            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-center w-[85%]">
+      {/* Mobile/Tablet Alternative: Embla Carousel */}
+      <div className="lg:hidden mt-20 w-full overflow-hidden" ref={emblaRef}>
+        <div className="flex select-none touch-pan-y items-start">
+          {PHOTOS.map((photo, i) => (
+            <div 
+              key={i} 
+              className="flex-[0_0_80%] sm:flex-[0_0_70%] min-w-0 pl-3"
+            >
               <div 
-                className="bg-[#0A0A0A]/95 backdrop-blur-md px-6 py-4"
-                style={{ border: "1px solid rgba(212,175,85,0.2)" }}
+                className="relative aspect-[4/5] w-full bg-white p-3 shadow-2xl rounded-sm"
               >
-                <p className="text-[15px] italic text-[#d4af55] font-serif mb-1">{photo.caption}</p>
-                <p className="text-[9px] tracking-[0.3em] text-[#c8c0b4]/60">{photo.year}</p>
+                <img 
+                  src={photo.img} 
+                  alt={photo.caption} 
+                  className="w-full h-full object-cover" 
+                  style={{ filter: "sepia(18%) contrast(1.05) brightness(0.95)" }}
+                />
+                
+                {/* Corner Tabs */}
+                {[
+                  { cls: "top-2 left-2", clip: "polygon(0 0, 100% 0, 0 100%)" },
+                  { cls: "top-2 right-2", clip: "polygon(0 0, 100% 0, 100% 100%)" },
+                  { cls: "bottom-2 left-2", clip: "polygon(0 0, 0 100%, 100% 100%)" },
+                  { cls: "bottom-2 right-2", clip: "polygon(100% 0, 0 100%, 100% 100%)" },
+                ].map((c, j) => (
+                  <div
+                    key={j}
+                    className={`absolute ${c.cls} w-5 h-5`}
+                    style={{ background: "rgba(180,140,60,0.7)", clipPath: c.clip }}
+                  />
+                ))}
+                
+                {/* Elegant Mobile Caption overlay */}
+                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-center w-[85%] z-20">
+                  <div 
+                    className="bg-[#0A0A0A]/95 backdrop-blur-md px-4 py-3 shadow-xl border border-gold/20"
+                  >
+                    <p className="text-[14px] italic text-[#d4af55] font-serif mb-1 leading-tight">{photo.caption}</p>
+                    <p className="text-[8px] tracking-[0.3em] text-[#c8c0b4]/50">{photo.year}</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+          {/* End spacer */}
+          <div className="flex-[0_0_6%] min-w-[1.5rem]" />
+        </div>
+        
+        <div className="mt-12 text-center">
+          <p className="text-[9px] tracking-[0.4em] uppercase text-gold/40">
+            Swipe to explore the gallery
+          </p>
+        </div>
       </div>
     </section>
   );
