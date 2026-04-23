@@ -469,8 +469,12 @@ export default function AlbumView() {
       </div>
 
       {/* Mobile/Tablet Alternative: Embla Carousel */}
-      <div className="lg:hidden mt-20 w-full overflow-hidden" ref={emblaRef}>
-        <div className="flex select-none touch-pan-y items-start">
+      <div 
+        className="lg:hidden mt-20 w-full overflow-hidden touch-pan-y" 
+        ref={emblaRef}
+        data-lenis-prevent
+      >
+        <div className="flex select-none items-start">
           {PHOTOS.map((photo, i) => (
             <div 
               key={i} 
