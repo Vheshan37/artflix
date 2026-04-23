@@ -20,43 +20,43 @@ const ReactFlipBook = dynamic(
 
 const PHOTOS = [
   {
-    img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=900&auto=format&fit=crop",
-    caption: "Sibling Portrait",
+    img: "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=900&auto=format&fit=crop",
+    caption: "The Bridal Elegance",
     year: "2024",
   },
   {
-    img: "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?q=80&w=900&auto=format&fit=crop",
-    caption: "Wedding Collection",
+    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=900&auto=format&fit=crop",
+    caption: "Studio Portraiture",
     year: "2024",
   },
   {
-    img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=900&auto=format&fit=crop",
-    caption: "Nordic Vista",
+    img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=900&auto=format&fit=crop",
+    caption: "Editorial Fashion",
     year: "2024",
   },
   {
-    img: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=900&auto=format&fit=crop",
-    caption: "Golden Hour Family",
+    img: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=900&auto=format&fit=crop",
+    caption: "Engagement Vows",
     year: "2024",
   },
   {
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=900&auto=format&fit=crop",
-    caption: "Portrait Study",
+    img: "https://images.unsplash.com/photo-1554046920-90fb4d5ba644?q=80&w=900&auto=format&fit=crop",
+    caption: "Monochrome Study",
     year: "2023",
   },
   {
-    img: "https://images.unsplash.com/photo-1490750967868-88df5691cc9a?q=80&w=900&auto=format&fit=crop",
-    caption: "Bloom Series",
+    img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=900&auto=format&fit=crop",
+    caption: "Interior Framing",
     year: "2023",
   },
   {
-    img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=900&auto=format&fit=crop",
-    caption: "Anniversary Moments",
+    img: "https://images.unsplash.com/photo-1519671482749-fd098f390099?q=80&w=900&auto=format&fit=crop",
+    caption: "Macro Details",
     year: "2023",
   },
   {
-    img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=900&auto=format&fit=crop",
-    caption: "Studio Session",
+    img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=900&auto=format&fit=crop",
+    caption: "Classic Fine Art",
     year: "2023",
   },
 ];
