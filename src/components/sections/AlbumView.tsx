@@ -179,25 +179,24 @@ const PhotoPage = React.forwardRef<HTMLDivElement, { img: string; caption: strin
 
         {/* Photo with white border */}
         <div
-          className="relative flex-1 overflow-hidden"
+          className="relative w-full h-[380px] overflow-hidden bg-white p-2"
           style={{
-            border: "10px solid #fff",
             boxShadow: "0 3px 18px rgba(0,0,0,0.2), inset 0 0 0 1px rgba(0,0,0,0.07)",
           }}
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url('${img}')`,
-              filter: "sepia(18%) contrast(1.05) brightness(0.95)",
-            }}
+          <img
+            src={img}
+            alt={caption}
+            className="w-full h-full object-cover"
+            style={{ filter: "sepia(18%) contrast(1.05) brightness(0.95)" }}
+            crossOrigin="anonymous"
           />
           {/* Photo corner tabs */}
           {[
-            { cls: "top-1.5 left-1.5", clip: "polygon(0 0, 100% 0, 0 100%)" },
-            { cls: "top-1.5 right-1.5", clip: "polygon(0 0, 100% 0, 100% 100%)" },
-            { cls: "bottom-1.5 left-1.5", clip: "polygon(0 0, 0 100%, 100% 100%)" },
-            { cls: "bottom-1.5 right-1.5", clip: "polygon(100% 0, 0 100%, 100% 100%)" },
+            { cls: "top-2 left-2", clip: "polygon(0 0, 100% 0, 0 100%)" },
+            { cls: "top-2 right-2", clip: "polygon(0 0, 100% 0, 100% 100%)" },
+            { cls: "bottom-2 left-2", clip: "polygon(0 0, 0 100%, 100% 100%)" },
+            { cls: "bottom-2 right-2", clip: "polygon(100% 0, 0 100%, 100% 100%)" },
           ].map((c, i) => (
             <div
               key={i}
