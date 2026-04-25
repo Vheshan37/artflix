@@ -56,14 +56,14 @@ export default function Services() {
         <div className="flex items-center justify-center gap-4 mb-6 reveal-srv">
           <div className="w-10 h-[1px] bg-gold" />
           <span className="text-[9px] font-medium tracking-[0.4em] uppercase text-gold">
-            Our Disciplines
+            Premium Collections
           </span>
           <div className="w-10 h-[1px] bg-gold" />
         </div>
         <h2 className="font-serif text-[clamp(38px,5vw,64px)] font-light leading-[1.15] text-ivory text-center reveal-srv">
-          Two crafts.
+          Crafted to be
           <br />
-          <em className="italic text-gold">One seamless vision.</em>
+          <em className="italic text-gold">unforgettable.</em>
         </h2>
       </div>
 
@@ -74,7 +74,7 @@ export default function Services() {
               className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-[0.9s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-100 brightness-50 group-hover:brightness-75"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1615209853186-e4bd66602508?q=80&w=1200&auto=format&fit=crop')",
+                  "url('/628366608_861105103428338_604497389273298332_n.jpg')",
               }}
             />
             <div className="absolute inset-0 flex flex-col justify-end p-12 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent">
@@ -82,16 +82,16 @@ export default function Services() {
                 01
               </div>
               <h3 className="font-serif text-[32px] font-light text-ivory mb-3">
-                Digital Photo Editing
+                3D Crystal LED Orbs
               </h3>
               <p className="text-[11px] tracking-[0.15em] uppercase text-gold mb-6">
-                Retouching · Manipulation · Enhancement
+                Laser Engraved · Luminous Base · Unique Gift
               </p>
               <Link
                 href="/catalogue"
                 className="inline-flex items-center gap-3 text-[10px] tracking-[0.22em] uppercase text-platinum transition-colors duration-300 group-hover:text-ivory w-fit"
               >
-                View Process
+                View Collection
                 <span className="inline-block w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-8" />
               </Link>
             </div>
@@ -104,7 +104,7 @@ export default function Services() {
               className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-[0.9s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-100 brightness-50 group-hover:brightness-75"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=1200&auto=format&fit=crop')",
+                  "url('/works/480554214_593454150193436_8828197630495022447_n.jpg')",
               }}
             />
             <div className="absolute inset-0 flex flex-col justify-end p-12 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent">
@@ -112,16 +112,16 @@ export default function Services() {
                 02
               </div>
               <h3 className="font-serif text-[32px] font-light text-ivory mb-3">
-                Custom Print & Laminate
+                Signature Frameless
               </h3>
               <p className="text-[11px] tracking-[0.15em] uppercase text-gold mb-6">
-                Frameless wall art · Durable laminations · Polaroids
+                Glass-Look Finish · Vibrant Colors · Wall Art
               </p>
               <Link
                 href="/catalogue"
                 className="inline-flex items-center gap-3 text-[10px] tracking-[0.22em] uppercase text-platinum transition-colors duration-300 group-hover:text-ivory w-fit"
               >
-                Explore Products
+                Explore Sizes
                 <span className="inline-block w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-8" />
               </Link>
             </div>

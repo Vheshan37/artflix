@@ -59,23 +59,20 @@ export default function ArtisanTouch() {
           <div className="flex items-center gap-4 mb-6">
             <div className="w-10 h-[1px] bg-gold" />
             <span className="text-[9px] font-medium tracking-[0.4em] uppercase text-gold">
-              The Artisan&apos;s Touch
+              Our Process
             </span>
           </div>
           <h2 className="font-serif text-[clamp(38px,5vw,64px)] font-light leading-[1.15] text-ivory">
-            Where vision
+            From memory
             <br />
-            <em className="italic text-gold">becomes reality</em>
+            <em className="italic text-gold">to masterpiece</em>
           </h2>
           <p className="text-[15px] leading-[1.85] text-platinum/75 font-light max-w-[440px] mt-8">
-            We don&apos;t just print photos; we curate memories with an artisan&apos;s eye. Through
-            heritage-grade lamination and meticulous digital retouching, each piece becomes a
-            legacy.
+            We don&apos;t just print photos; we curate memories with an artisan&apos;s eye. Send us your favorite mobile capture, and our digital artists will transform it into a breathtaking painting.
           </p>
           <div className="w-12 h-[1px] bg-gold my-9" />
           <p className="text-[15px] leading-[1.85] text-platinum/75 font-light mt-0 max-w-[440px]">
-            Once perfected, your photo is meticulously printed and protected with premium
-            laminations, delivering a seamless, frameless aesthetic that stands the test of time.
+            Once digitally perfected, your art is meticulously printed and protected with premium laminations, delivering our signature frameless, glass-look aesthetic.
           </p>
         </div>
 
@@ -86,15 +83,15 @@ export default function ArtisanTouch() {
               className="artisan-panel-img absolute -inset-10 will-change-transform bg-cover bg-center transition-transform duration-1000 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1621245645511-df8bfe5752c0?q=80&w=1400&auto=format&fit=crop')",
+                  "url('/works/480419774_593045380234313_1262790299129335887_n.jpg')",
               }}
             />
             <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/90 to-transparent">
               <h3 className="font-serif text-[22px] font-light italic text-ivory mb-1.5">
-                Digital Mastering
+                1. Connect & Share
               </h3>
               <p className="text-[10px] tracking-[0.18em] uppercase text-gold">
-                Color grading & retouching
+                Send your photo via WhatsApp
               </p>
             </div>
           </div>
@@ -103,14 +100,14 @@ export default function ArtisanTouch() {
               className="artisan-panel-img absolute -inset-6 will-change-transform bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1616518174548-52c67bb309cd?q=80&w=800&auto=format&fit=crop')",
+                  "url('/works/480911995_597949723077212_3592211339890097745_n.jpg')",
               }}
             />
             <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
               <h3 className="font-serif text-lg font-light italic text-ivory mb-1">
-                Premium Lamination
+                2. Digital Painting
               </h3>
-              <p className="text-[9px] tracking-[0.18em] uppercase text-gold">Protective sealing</p>
+              <p className="text-[9px] tracking-[0.18em] uppercase text-gold">Handcrafted digital art</p>
             </div>
           </div>
           <div className="relative overflow-hidden aspect-4/3 group">
@@ -118,14 +115,14 @@ export default function ArtisanTouch() {
               className="artisan-panel-img absolute -inset-6 will-change-transform bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=800&auto=format&fit=crop')",
+                  "url('/works/486398360_616874307851420_2334407374371158726_n.jpg')",
               }}
             />
             <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
               <h3 className="font-serif text-lg font-light italic text-ivory mb-1">
-                Frameless Finish
+                3. Premium Finish
               </h3>
-              <p className="text-[9px] tracking-[0.18em] uppercase text-gold">Seamless mounting</p>
+              <p className="text-[9px] tracking-[0.18em] uppercase text-gold">Frameless & delivered</p>
             </div>
           </div>
         </div>

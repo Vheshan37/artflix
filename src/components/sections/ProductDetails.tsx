@@ -87,7 +87,7 @@ export default function ProductDetails() {
               className="absolute inset-0 bg-cover bg-center pointer-events-none"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop')",
+                  "url('/works/524331837_706514065554110_4268118539056236746_n.jpg')",
               }}
             />
             {/* Before */}
@@ -95,7 +95,7 @@ export default function ProductDetails() {
               className="absolute inset-0 bg-cover bg-center grayscale pointer-events-none brightness-75"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop&sat=-100')",
+                  "url('/works/524331837_706514065554110_4268118539056236746_n.jpg')",
                 clipPath: `inset(0 ${100 - sliderPos}% 0 0)`,
               }}
             />
@@ -126,21 +126,21 @@ export default function ProductDetails() {
               className="aspect-square bg-cover bg-center brightness-75 hover:brightness-95 transition-all"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=400&auto=format&fit=crop')",
+                  "url('/works/524401289_708029228735927_5106487507539885658_n.jpg')",
               }}
             />
             <div
               className="aspect-square bg-cover bg-center brightness-75 hover:brightness-95 transition-all"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=400&auto=format&fit=crop')",
+                  "url('/works/532243718_721489777389872_6677289994051051575_n.jpg')",
               }}
             />
             <div
               className="aspect-square bg-cover bg-center brightness-75 hover:brightness-95 transition-all"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop')",
+                  "url('/works/537359103_727863823419134_488152008974869960_n.jpg')",
               }}
             />
           </div>

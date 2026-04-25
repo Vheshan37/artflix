@@ -24,7 +24,7 @@ export default function FeaturedProduct() {
           <div className="absolute -inset-4 bg-gold/10 blur-2xl rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-2xl transition-transform duration-700 transform group-hover:rotate-y-2 group-hover:rotate-x-2 group-hover:scale-[1.02]">
             <img
-              src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1200&auto=format&fit=crop"
+              src="/works/482979563_605933535612164_6920470823351063224_n.jpg"
               alt="Premium Frameless Wall Art"
               className="w-full h-full object-cover"
               crossOrigin="anonymous"

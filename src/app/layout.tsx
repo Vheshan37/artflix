@@ -5,6 +5,7 @@ import SmoothScroller from "@/components/SmoothScroller";
 import Cursor from "@/components/Cursor";
 import TargetCursor from "@/components/TargetCursor";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function RootLayout({
             <Cursor />
             <TargetCursor />
             {children}
+            <FloatingWhatsApp />
           </SmoothScroller>
         </ThemeProvider>
       </body>

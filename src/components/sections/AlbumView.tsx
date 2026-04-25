@@ -21,43 +21,43 @@ const ReactFlipBook = dynamic(
 
 const PHOTOS = [
   {
-    img: "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=900&auto=format&fit=crop",
-    caption: "The Bridal Elegance",
+    img: "/works/477089817_608102248728626_1688917684253117922_n.jpg",
+    caption: "Birthday Masterpiece",
     year: "2024",
   },
   {
-    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=900&auto=format&fit=crop",
-    caption: "Studio Portraiture",
+    img: "/works/494760863_646601994878651_5427797618584057018_n.jpg",
+    caption: "Anniversary Edit",
     year: "2024",
   },
   {
-    img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=900&auto=format&fit=crop",
-    caption: "Editorial Fashion",
+    img: "/works/497779122_653289964209854_6844972595970220078_n.jpg",
+    caption: "Family Portraits",
     year: "2024",
   },
   {
-    img: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=900&auto=format&fit=crop",
-    caption: "Engagement Vows",
+    img: "/works/524331837_706514065554110_4268118539056236746_n.jpg",
+    caption: "Couple's Frame",
     year: "2024",
   },
   {
-    img: "https://images.unsplash.com/photo-1554046920-90fb4d5ba644?q=80&w=900&auto=format&fit=crop",
-    caption: "Monochrome Study",
+    img: "/works/524401289_708029228735927_5106487507539885658_n.jpg",
+    caption: "Classic Portrait",
     year: "2023",
   },
   {
-    img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=900&auto=format&fit=crop",
-    caption: "Interior Framing",
+    img: "/works/532243718_721489777389872_6677289994051051575_n.jpg",
+    caption: "Digital Art Finish",
     year: "2023",
   },
   {
-    img: "https://images.unsplash.com/photo-1519671482749-fd098f390099?q=80&w=900&auto=format&fit=crop",
-    caption: "Macro Details",
+    img: "/works/537359103_727863823419134_488152008974869960_n.jpg",
+    caption: "Custom Present",
     year: "2023",
   },
   {
-    img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=900&auto=format&fit=crop",
-    caption: "Classic Fine Art",
+    img: "/works/486398360_616874307851420_2334407374371158726_n.jpg",
+    caption: "Artflics Premium",
     year: "2023",
   },
 ];

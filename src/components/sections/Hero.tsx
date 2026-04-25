@@ -32,7 +32,7 @@ const SocialIcons = () => (
     </a>
 
     <a
-      href="https://facebook.com"
+      href="https://www.facebook.com/profile.php?id=100085865697339"
       target="_blank"
       rel="noopener noreferrer"
       className="group p-2 transition-all duration-300 hover:scale-125"
@@ -54,7 +54,7 @@ const SocialIcons = () => (
     </a>
 
     <a
-      href="https://wa.me/yournumber"
+      href="https://wa.me/94729644800"
       target="_blank"
       rel="noopener noreferrer"
       className="group p-2 transition-all duration-300 hover:scale-125"
@@ -143,7 +143,7 @@ export default function Hero() {
         className="absolute inset-0 z-0 origin-center will-change-transform"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1578301978693-85fa9c026f43?q=80&w=2000&auto=format&fit=crop')", // Moody architectural / interior frame reference
+            "url('/ArtflicsLogo.jpg')", // Actual work from client
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
