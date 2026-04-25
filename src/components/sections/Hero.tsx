@@ -165,15 +165,13 @@ export default function Hero() {
 
       {/* Content */}
       <div ref={textContentRef} className="relative z-20 text-center max-w-[900px] px-10">
-        <span className="reveal-hero block text-[10px] font-medium tracking-[0.35em] uppercase mb-7"
-          style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
-        >
+        <span className="reveal-hero block text-[10px] font-medium tracking-[0.35em] uppercase text-gold mb-7">
           Digital Colour Lab
         </span>
         <h1 className="reveal-hero font-serif text-[clamp(72px,10vw,140px)] font-light leading-[0.9] tracking-[0.12em] text-ivory drop-shadow-2xl">
-          ART<em style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontStyle: 'italic' }}>FLICS</em>
+          ART<em className="text-gold italic">FLICS</em>
         </h1>
-        <div className="reveal-hero w-[60px] h-[1px] mx-auto my-6" style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)' }} />
+        <div className="reveal-hero w-[60px] h-[1px] bg-gold mx-auto my-6" />
         <p className="reveal-hero font-serif text-lg font-light italic tracking-[0.12em] text-platinum mx-0 mt-7 mb-12">
           Let&apos;s Frame Your Memorable Moment
         </p>

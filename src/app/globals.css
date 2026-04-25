@@ -4,55 +4,56 @@
 
 @layer base {
   :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
     --chart-3: oklch(0.439 0 0);
     --chart-4: oklch(0.371 0 0);
     --chart-5: oklch(0.269 0 0);
     --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
     --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+
     /* 
      * ARTFLICS THEME COLORS (RGB components for Tailwind alpha support)
-     * LIGHT MODE
+     * DARK MODE — Premium Obsidian & Gold
      */
-    --color-obsidian: 245 240 232; /* Ivory #f5f0e8 */
-    --color-charcoal: 237 232 223; /* Cream #ede8df */
-    --color-graphite: 224 217 206; 
-    --color-smoke: 200 192 180; /* Platinum #c8c0b4 */
-    --color-ash: 150 145 135;
+    --color-obsidian: 6 5 15; /* Deep dark blue-black #06050f */
+    --color-charcoal: 10 9 25; /* Very dark blue #0a0919 */
+    --color-graphite: 16 14 38; /* Dark blue #100e26 */
+    --color-smoke: 25 22 60; /* #19163c */
+    --color-ash: 44 39 90; /* #2c274a */
     
-    --color-ivory: 10 10 10; /* Obsidian #0A0A0A */
-    --color-cream: 17 17 17; /* Charcoal #111111 */
-    --color-platinum: 51 51 51; /* Ash #333333 */
+    --color-ivory: 245 240 255; /* Soft lavender-white #f5f0ff */
+    --color-cream: 220 215 245; /* Light lavender #dcd7f5 */
+    --color-platinum: 180 190 230; /* Cool blue-grey #b4bee6 */
     
-    --color-gold: 184 150 106; /* Gold #b8966a */
-    --color-gold-light: 156 120 73; /* Darker gold for light mode text */
+    --color-gold: 212 175 85; /* Gold #d4af55 */
+    --color-gold-light: 240 216 144; /* Lighter gold #f0d890 */
 
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
   }
 
   /* Lenis smooth scroll global rules */
@@ -89,63 +90,27 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
     opacity: 0.3;
   }
+
   .theme {
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);
   }
+
   .dark {
+    /* Explicitly maintain dark values */
     --background: oklch(0.145 0 0);
     --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    /* 
-     * ARTFLICS THEME COLORS
-     * DARK MODE (Original exact colors)
-     */
-    --color-obsidian: 10 10 10; /* #0A0A0A */
-    --color-charcoal: 17 17 17; /* #111111 */
-    --color-graphite: 26 26 26; /* #1a1a1a */
-    --color-smoke: 36 36 36; /* #242424 */
-    --color-ash: 51 51 51; /* #333333 */
-    
-    --color-ivory: 245 240 232; /* #f5f0e8 */
-    --color-cream: 237 232 223; /* #ede8df */
-    --color-platinum: 200 192 180; /* #c8c0b4 */
-    
-    --color-gold: 184 150 106; /* #b8966a */
-    --color-gold-light: 212 170 122; /* #d4aa7a */
-
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+    --color-obsidian: 6 5 15;
+    --color-charcoal: 10 9 25;
+    --color-ivory: 245 240 255;
+    --color-gold: 212 175 85;
+    --color-gold-light: 240 216 144;
   }
+
   * {
     border-color: var(--border);
   }
+
   html {
     font-family: var(--font-montserrat), sans-serif;
   }
@@ -155,4 +120,27 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  .magnetic {
+    display: inline-block;
+  }
+
+  .reveal-hero, .reveal-srv, .reveal-card, .reveal-prod {
+    opacity: 0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #06050f;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4af55;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f0d890;
 }

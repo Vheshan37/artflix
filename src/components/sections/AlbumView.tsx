@@ -153,7 +153,7 @@ const CoverPage = React.forwardRef<HTMLDivElement, Record<string, never>>((props
 
       {/* Bottom label */}
       <p
-        className="absolute bottom-7 text-[8px] tracking-[0.3em] uppercase opacity-20"
+        className="absolute bottom-7 w-full text-center text-[8px] tracking-[0.3em] uppercase opacity-20"
         style={{ color: "#d4af55", fontFamily: "Georgia, serif" }}
       >
         Premium Prints &amp; Lamination
