@@ -20,8 +20,8 @@ export default function Navbar() {
       className={clsx(
         "fixed top-0 left-0 right-0 z-[100] flex items-center justify-between transition-all duration-500 ease-in-out",
         scrolled
-          ? "bg-obsidian/90 backdrop-blur-md py-4 px-12 md:px-16 border-b border-gold/10"
-          : "py-8 px-12 md:px-16 bg-transparent"
+          ? "bg-white/95 backdrop-blur-lg py-4 px-12 md:px-16 border-b border-neonBlue/10 shadow-sm"
+          : "bg-white/70 backdrop-blur-md py-6 px-12 md:px-16 border-b border-white/20"
       )}
     >
       <Link

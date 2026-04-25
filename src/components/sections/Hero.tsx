@@ -156,26 +156,26 @@ export default function Hero() {
         lightSpread={1.4}
         rayLength={1.8}
         mouseInfluence={0.1}
-        className="absolute inset-0 z-[5] opacity-50"
+        className="absolute inset-0 z-[5] opacity-30"
       />
-      {/* Dark Overlay for better text readability */}
-      <div className="absolute inset-0 z-10 bg-obsidian/60" />
-      {/* Gradient Overlay — subtle depth */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-obsidian via-transparent to-obsidian/40" />
+      {/* Black Overlay for text readability */}
+      <div className="absolute inset-0 z-10 bg-black/40" />
+      {/* Black Gradient Overlay — cinematic depth */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
 
       {/* Content */}
       <div ref={textContentRef} className="relative z-20 text-center max-w-[900px] px-10">
-        <span className="reveal-hero block text-[10px] font-medium tracking-[0.35em] uppercase mb-7"
+        <span className="reveal-hero block text-[10px] font-bold tracking-[0.4em] uppercase mb-7"
           style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
         >
           Digital Colour Lab
         </span>
-        <h1 className="reveal-hero font-serif text-[clamp(72px,10vw,140px)] font-light leading-[0.9] tracking-[0.12em] text-ivory drop-shadow-2xl">
+        <h1 className="reveal-hero font-serif text-[clamp(72px,10vw,140px)] font-light leading-[0.9] tracking-[0.12em] text-white drop-shadow-2xl">
           ART<em style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontStyle: 'italic' }}>FLICS</em>
         </h1>
-        <div className="reveal-hero w-[60px] h-[1px] mx-auto my-6" style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)' }} />
-        <p className="reveal-hero font-serif text-lg font-light italic tracking-[0.12em] text-platinum mx-0 mt-7 mb-12">
-          Let&apos;s Frame Your Memorable Moment
+        <div className="reveal-hero w-[80px] h-[2px] mx-auto my-8" style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)' }} />
+        <p className="reveal-hero font-serif text-xl font-light italic tracking-[0.15em] text-white/90 mx-0 mt-7 mb-12 drop-shadow-md">
+          Let&apos;s Frame Your Memorable Moments
         </p>
         <div className="reveal-hero">
           <MagneticButton href="#catalogue">Explore Creations</MagneticButton>

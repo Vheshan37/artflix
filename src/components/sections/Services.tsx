@@ -71,17 +71,17 @@ export default function Services() {
         <GlareHover glareColor="#f0d890" glareOpacity={0.4} glareSize={200} className="reveal-card">
           <div className="relative w-full h-full overflow-hidden aspect-[3/2] cursor-none group">
             <div
-              className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-[0.9s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-100 brightness-50 group-hover:brightness-75"
+              className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-[0.9s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-100 brightness-[0.85] group-hover:brightness-100"
               style={{
                 backgroundImage:
                   "url('/628366608_861105103428338_604497389273298332_n.jpg')",
               }}
             />
-            <div className="absolute inset-0 flex flex-col justify-end p-12 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent">
-              <div className="font-serif text-[80px] font-light text-gold/15 leading-none mb-auto self-end">
+            <div className="absolute inset-0 flex flex-col justify-end p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500 group-hover:from-black/90">
+              <div className="font-serif text-[80px] font-light text-white/10 leading-none mb-auto self-end">
                 01
               </div>
-              <h3 className="font-serif text-[32px] font-light text-ivory mb-3">
+              <h3 className="font-serif text-[32px] font-light text-white mb-3">
                 3D Crystal LED Orbs
               </h3>
               <p className="text-[11px] tracking-[0.15em] uppercase text-gold mb-6">
@@ -89,7 +89,7 @@ export default function Services() {
               </p>
               <Link
                 href="/catalogue"
-                className="inline-flex items-center gap-3 text-[10px] tracking-[0.22em] uppercase text-platinum transition-colors duration-300 group-hover:text-ivory w-fit"
+                className="inline-flex items-center gap-3 text-[10px] tracking-[0.22em] uppercase text-white/70 transition-colors duration-300 hover:text-white w-fit"
               >
                 View Collection
                 <span className="inline-block w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-8" />
@@ -101,17 +101,17 @@ export default function Services() {
         <GlareHover glareColor="#f0d890" glareOpacity={0.4} glareSize={200} className="reveal-card">
           <div className="relative w-full h-full overflow-hidden aspect-[3/2] cursor-none group">
             <div
-              className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-[0.9s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-100 brightness-50 group-hover:brightness-75"
+              className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-[0.9s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-100 brightness-[0.85] group-hover:brightness-100"
               style={{
                 backgroundImage:
                   "url('/works/480554214_593454150193436_8828197630495022447_n.jpg')",
               }}
             />
-            <div className="absolute inset-0 flex flex-col justify-end p-12 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent">
-              <div className="font-serif text-[80px] font-light text-gold/15 leading-none mb-auto self-end">
+            <div className="absolute inset-0 flex flex-col justify-end p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500 group-hover:from-black/90">
+              <div className="font-serif text-[80px] font-light text-white/10 leading-none mb-auto self-end">
                 02
               </div>
-              <h3 className="font-serif text-[32px] font-light text-ivory mb-3">
+              <h3 className="font-serif text-[32px] font-light text-white mb-3">
                 Signature Frameless
               </h3>
               <p className="text-[11px] tracking-[0.15em] uppercase text-gold mb-6">
@@ -119,7 +119,7 @@ export default function Services() {
               </p>
               <Link
                 href="/catalogue"
-                className="inline-flex items-center gap-3 text-[10px] tracking-[0.22em] uppercase text-platinum transition-colors duration-300 group-hover:text-ivory w-fit"
+                className="inline-flex items-center gap-3 text-[10px] tracking-[0.22em] uppercase text-white/70 transition-colors duration-300 hover:text-white w-fit"
               >
                 Explore Sizes
                 <span className="inline-block w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-8" />

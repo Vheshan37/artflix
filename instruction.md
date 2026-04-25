@@ -1,11 +1,12 @@
 # ARTFLICS Development Instructions
 
-Always maintain the cohesive, premium aesthetic described in the project rules.
+Always maintain the cohesive, premium light-aesthetic described in the project rules.
 
-- **Theme**: Deep blue-black backgrounds (Obsidian: #06050f, Charcoal: #0a0919) with Neon Pink & Blue accents.
+- **Theme**: Light Theme with Faint Blue backgrounds (Obsidian: #f5f8ff, Charcoal: #ebf0fa) with Neon Pink & Blue accents.
+- **Background**: Faint Blue tint (approx 5-10% blue saturation).
+- **Typography**: Deep Indigo-Black Ivory (#0f142d) and Muted Blue Platinum (#465578).
 - **Primary Accent (gold token)**: Neon Pink `#f810bc`
 - **Secondary Accent (neonBlue token)**: Neon Blue `#064feb`
-- **Text**: Lavender-white Ivory `#f5f0ff` and cool Blue-grey Platinum `#b4bee6`
 - **Rules**: 
   - Strictly use Next.js 14 App Router.
   - Implement fluid parallax animations via GSAP ScrollTrigger.
