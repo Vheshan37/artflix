@@ -4,11 +4,13 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal pt-20 pb-10 px-10 md:px-16 border-t border-platinum/10 relative z-20">
+    <footer className="bg-charcoal pt-20 pb-10 px-10 md:px-16 border-t relative z-20" style={{ borderColor: 'rgba(6,79,235,0.2)' }}>
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-10">
           <div>
-            <div className="font-serif text-4xl text-ivory font-light tracking-[0.2em] mb-6">ARTFLICS</div>
+            <div className="font-serif text-4xl text-ivory font-light tracking-[0.2em] mb-6">
+              ART<span style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>FLICS</span>
+            </div>
             <div className="flex flex-col gap-2 text-[11px] tracking-[0.15em] uppercase text-platinum/60">
               <p>📍 Urapola, Sri Lanka</p>
               <p>📞 072 964 4800</p>

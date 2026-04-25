@@ -44,8 +44,10 @@ export default function FeaturedProduct() {
 
         {/* Right: Product Details */}
         <div className="flex flex-col">
-          <span className="text-[10px] font-medium tracking-[0.3em] uppercase text-gold mb-4">
-            ARTFLICS EXCLUSIVE
+          <span className="text-[10px] font-medium tracking-[0.3em] uppercase mb-4"
+            style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+          >
+            Digital Colour Lab
           </span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-ivory font-light leading-tight mb-4">
             Premium Frameless <br /> Wall Art <span className="text-3xl">📸✨</span>
@@ -61,9 +63,10 @@ export default function FeaturedProduct() {
                   onClick={() => setSelectedSize(size)}
                   className={`px-5 py-2.5 rounded-full text-xs transition-all duration-300 border ${
                     selectedSize === size
-                      ? "bg-gold border-gold text-obsidian shadow-[0_0_15px_rgba(184,150,106,0.3)]"
+                      ? "border-transparent text-obsidian shadow-[0_0_15px_rgba(248,16,188,0.4)]"
                       : "bg-transparent border-platinum/20 text-platinum hover:border-gold/50 hover:text-gold"
                   }`}
+                  style={selectedSize === size ? { background: 'linear-gradient(90deg, #064feb, #f810bc)' } : {}}
                 >
                   {size}
                 </button>
@@ -94,7 +97,10 @@ export default function FeaturedProduct() {
             <button className="w-full py-4 rounded-full border border-platinum/20 text-ivory text-sm tracking-widest uppercase hover:bg-ivory hover:text-obsidian transition-all duration-300">
               Add to cart
             </button>
-            <button className="w-full py-4 rounded-full bg-gold text-obsidian text-sm tracking-widest uppercase font-medium hover:brightness-110 hover:shadow-[0_0_20px_rgba(184,150,106,0.4)] transition-all duration-300">
+            <button
+              className="w-full py-4 rounded-full text-obsidian text-sm tracking-widest uppercase font-medium hover:brightness-110 hover:shadow-[0_0_20px_rgba(248,16,188,0.4)] transition-all duration-300"
+              style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)' }}
+            >
               Order Now
             </button>
           </div>

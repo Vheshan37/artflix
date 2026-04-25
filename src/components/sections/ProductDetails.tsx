@@ -5,22 +5,24 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import clsx from "clsx";
 
-const FRAMES = [
-  {
-    id: "glossy",
-    name: "Glossy Finish",
-    img: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=400&auto=format&fit=crop",
-  },
-  {
-    id: "matte",
-    name: "Matte Finish",
-    img: "https://images.unsplash.com/photo-1504198458649-3128b932f49e?q=80&w=400&auto=format&fit=crop",
-  },
-  {
-    id: "canvas",
-    name: "Canvas Texture",
-    img: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?q=80&w=400&auto=format&fit=crop",
-  },
+// Real price list from Artflics
+const SIZES = [
+  { size: "5×5", price: 850 },
+  { size: "6×6", price: 1000 },
+  { size: "6×8", price: 1300 },
+  { size: "8×10", price: 1800 },
+  { size: "8×12", price: 2000 },
+  { size: "10×12", price: 2300 },
+  { size: "10×15", price: 2500 },
+  { size: "12×15", price: 3000 },
+  { size: "12×18", price: 3500 },
+  { size: "16×24", price: 6500 },
+];
+
+const FINISHES = [
+  { id: "glossy", name: "Glossy", desc: "High-shine, vibrant finish" },
+  { id: "matte", name: "Matte", desc: "Soft, elegant, no glare" },
+  { id: "canvas", name: "Canvas", desc: "Textured artistic feel" },
 ];
 
 export default function ProductDetails() {
@@ -29,11 +31,12 @@ export default function ProductDetails() {
 
   const [sliderPos, setSliderPos] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
-  const [selectedFrame, setSelectedFrame] = useState("walnut");
+  const [selectedSize, setSelectedSize] = useState(SIZES[3]); // default 8×10
+  const [selectedFinish, setSelectedFinish] = useState("glossy");
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     const elements = gsap.utils.selector(sectionRef);
     gsap.fromTo(
       elements(".reveal-prod"),
@@ -42,18 +45,12 @@ export default function ProductDetails() {
         opacity: 1,
         y: 0,
         duration: 0.8,
-        stagger: 0.1,
+        stagger: 0.08,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-        },
+        scrollTrigger: { trigger: sectionRef.current, start: "top 75%" },
       }
     );
-
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, []);
 
   const handlePointerDown = () => setIsDragging(true);
@@ -65,176 +62,208 @@ export default function ProductDetails() {
     setSliderPos((x / rect.width) * 100);
   };
 
+  const totalPrice = selectedSize.price * quantity;
+
+  const whatsappMessage = encodeURIComponent(
+    `Hello Artflics! I'd like to order a Frameless Wall Art:\n📐 Size: ${selectedSize.size} inches\n✨ Finish: ${selectedFinish}\n🔢 Quantity: ${quantity}\n💰 Total: Rs ${totalPrice.toLocaleString()} LKR\n\nPlease let me know the next steps. 🙏`
+  );
+
   return (
     <section
       id="product"
       ref={sectionRef}
-      className="bg-obsidian py-40 px-10 md:px-16 min-h-screen"
+      className="bg-obsidian py-32 px-6 md:px-16 min-h-screen"
     >
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-        {/* Left visually sticky column */}
-        <div className="lg:sticky lg:top-32 h-auto flex flex-col gap-2 reveal-prod">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* ─── Left: Image + Thumbnails ─── */}
+        <div className="lg:sticky lg:top-28 flex flex-col gap-3 reveal-prod">
+          {/* Before/After Slider */}
           <div
             ref={containerRef}
-            className="relative w-full aspect-[4/5] bg-graphite overflow-hidden select-none cursor-ew-resize touch-none"
+            className="relative w-full aspect-[4/5] bg-graphite overflow-hidden select-none cursor-ew-resize touch-none rounded-sm"
             onPointerDown={handlePointerDown}
             onPointerUp={handlePointerUp}
             onPointerLeave={handlePointerUp}
             onPointerMove={handlePointerMove}
           >
-            {/* After */}
             <div
               className="absolute inset-0 bg-cover bg-center pointer-events-none"
-              style={{
-                backgroundImage:
-                  "url('/works/524331837_706514065554110_4268118539056236746_n.jpg')",
-              }}
+              style={{ backgroundImage: "url('/works/524331837_706514065554110_4268118539056236746_n.jpg')" }}
             />
-            {/* Before */}
             <div
               className="absolute inset-0 bg-cover bg-center grayscale pointer-events-none brightness-75"
               style={{
-                backgroundImage:
-                  "url('/works/524331837_706514065554110_4268118539056236746_n.jpg')",
+                backgroundImage: "url('/works/524331837_706514065554110_4268118539056236746_n.jpg')",
                 clipPath: `inset(0 ${100 - sliderPos}% 0 0)`,
               }}
             />
-
-            {/* Handle */}
+            {/* Slider handle */}
             <div
-              className="absolute top-0 bottom-0 w-[2px] bg-gold pointer-events-none z-10"
-              style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
+              className="absolute top-0 bottom-0 w-[2px] pointer-events-none z-10"
+              style={{ left: `${sliderPos}%`, transform: "translateX(-50%)", background: 'linear-gradient(to bottom, #064feb, #f810bc)' }}
             >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 bg-gold border-2 border-white/20 rounded-full flex items-center justify-center text-[10px] text-obsidian font-bold tracking-tighter">
-                &lsaquo; &rsaquo;
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 border-2 border-white/30 rounded-full flex items-center justify-center text-[10px] text-white font-bold"
+                style={{ background: 'linear-gradient(135deg, #064feb, #f810bc)' }}
+              >
+                ‹ ›
               </div>
             </div>
-
-            {/* Labels */}
-            <div className="absolute bottom-5 inset-x-5 flex justify-between pointer-events-none">
-              <span className="text-[9px] tracking-[0.2em] uppercase text-white/70 drop-shadow-md">
-                Before
-              </span>
-              <span className="text-[9px] tracking-[0.2em] uppercase text-white/70 drop-shadow-md">
-                After
-              </span>
+            <div className="absolute bottom-4 inset-x-4 flex justify-between pointer-events-none">
+              <span className="text-[9px] tracking-[0.2em] uppercase text-white/60">Before</span>
+              <span className="text-[9px] tracking-[0.2em] uppercase text-white/60">After</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-2 mt-2">
-            <div
-              className="aspect-square bg-cover bg-center brightness-75 hover:brightness-95 transition-all"
-              style={{
-                backgroundImage:
-                  "url('/works/524401289_708029228735927_5106487507539885658_n.jpg')",
-              }}
-            />
-            <div
-              className="aspect-square bg-cover bg-center brightness-75 hover:brightness-95 transition-all"
-              style={{
-                backgroundImage:
-                  "url('/works/532243718_721489777389872_6677289994051051575_n.jpg')",
-              }}
-            />
-            <div
-              className="aspect-square bg-cover bg-center brightness-75 hover:brightness-95 transition-all"
-              style={{
-                backgroundImage:
-                  "url('/works/537359103_727863823419134_488152008974869960_n.jpg')",
-              }}
-            />
+          {/* Thumbnails */}
+          <div className="grid grid-cols-3 gap-2">
+            {[
+              "/works/524401289_708029228735927_5106487507539885658_n.jpg",
+              "/works/532243718_721489777389872_6677289994051051575_n.jpg",
+              "/works/537359103_727863823419134_488152008974869960_n.jpg",
+            ].map((src, i) => (
+              <div
+                key={i}
+                className="aspect-square bg-cover bg-center brightness-60 hover:brightness-90 transition-all duration-300 rounded-sm cursor-pointer"
+                style={{ backgroundImage: `url('${src}')` }}
+              />
+            ))}
           </div>
         </div>
 
-        {/* Right Details Column */}
-        <div className="flex flex-col justify-center">
+        {/* ─── Right: Product Details ─── */}
+        <div className="flex flex-col">
           <Link
             href="/catalogue"
-            className="reveal-prod flex items-center gap-3 text-[9px] tracking-[0.2em] uppercase text-platinum/50 hover:text-gold transition-colors duration-300 mb-8 w-fit group"
+            className="reveal-prod flex items-center gap-2 text-[9px] tracking-[0.2em] uppercase text-platinum/40 hover:text-gold transition-colors duration-300 mb-8 w-fit group"
           >
-            <span className="inline-block transition-transform duration-300 group-hover:-translate-x-1">
-              &larr;
-            </span>{" "}
+            <span className="transition-transform duration-300 group-hover:-translate-x-1">←</span>
             Back to Catalogue
           </Link>
 
-          <p className="reveal-prod text-[9px] tracking-[0.35em] uppercase text-gold mb-5">
-            Premium Collectibles &middot; Laminated Edition 2025
+          <p
+            className="reveal-prod text-[9px] tracking-[0.35em] uppercase mb-4"
+            style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+          >
+            Digital Colour Lab · Premium Frameless Wall Art
           </p>
-          <h1 className="reveal-prod font-serif text-[clamp(36px,4vw,56px)] font-light leading-[1.1] text-ivory mb-8">
-            Birthday
-            <br />
-            <em className="italic text-gold">Frameless</em>
-            <br />
-            Wall Art
+          <h1 className="reveal-prod font-serif text-[clamp(36px,4vw,52px)] font-light leading-[1.1] text-ivory mb-2">
+            Frameless{" "}
+            <em className="italic" style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Wall Art
+            </em>
           </h1>
-
-          <div className="reveal-prod text-[9px] tracking-[0.3em] uppercase text-platinum border-b border-platinum/10 pb-3 mb-5">
-            The Story
-          </div>
-          <p className="reveal-prod text-[14px] leading-[1.9] text-platinum/70 mb-11 font-light">
-            A celebration of a cherished moment, enhanced with expert digital retouching to restore
-            perfect lighting and tonal balance. We carefully print and finish this piece with a
-            high-end protective lamination, producing an elegantly frameless wall art piece that
-            breathes life into any modern space without the clutter of a physical wooden frame.
+          <p className="reveal-prod text-sm text-platinum/60 font-light mb-10 leading-relaxed">
+            Expert digital retouching with premium lamination finish. High-definition
+            print that transforms your precious moments into stunning frameless wall pieces.
           </p>
 
-          <div className="reveal-prod text-[9px] tracking-[0.3em] uppercase text-platinum border-b border-platinum/10 pb-3 mb-5">
-            Select Lamination Finish
+          {/* ─── Price Display ─── */}
+          <div className="reveal-prod flex items-end gap-3 mb-10 p-5 rounded-sm border" style={{ borderColor: 'rgba(6,79,235,0.2)', background: 'rgba(6,79,235,0.05)' }}>
+            <span className="font-serif text-[44px] font-light text-ivory leading-none">
+              Rs {selectedSize.price.toLocaleString()}
+            </span>
+            <span className="text-platinum/50 text-sm mb-2">LKR / piece</span>
+            <span
+              className="ml-auto text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full font-medium"
+              style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)', color: 'white' }}
+            >
+              {selectedSize.size}&quot;
+            </span>
           </div>
-          <div className="reveal-prod grid grid-cols-3 gap-3 mb-11">
-            {FRAMES.map((f) => (
-              <div
-                key={f.id}
-                onClick={() => setSelectedFrame(f.id)}
-                className={clsx(
-                  "relative border border-platinum/10 cursor-none transition-all duration-300 group overflow-hidden",
-                  selectedFrame === f.id && "border-gold"
-                )}
-              >
-                <div
-                  className="aspect-square bg-cover bg-center brightness-75 transition-all group-hover:brightness-90"
-                  style={{ backgroundImage: `url('${f.img}')` }}
-                />
-                <div className="p-2.5 text-[9px] tracking-[0.18em] uppercase text-platinum truncate">
-                  {f.name}
-                </div>
-                <div
+
+          {/* ─── Size & Price Grid ─── */}
+          <div className="reveal-prod text-[9px] tracking-[0.3em] uppercase text-platinum/50 border-b mb-5 pb-3" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+            Select Size (inches) — Price (LKR)
+          </div>
+          <div className="reveal-prod grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-10">
+            {SIZES.map((s) => {
+              const isSelected = selectedSize.size === s.size;
+              return (
+                <button
+                  key={s.size}
+                  onClick={() => setSelectedSize(s)}
                   className={clsx(
-                    "absolute top-2 right-2 w-5 h-5 bg-gold rounded-full flex items-center justify-center text-obsidian text-[10px] transition-opacity duration-300",
-                    selectedFrame === f.id ? "opacity-100" : "opacity-0 group-hover:opacity-30"
+                    "relative flex flex-col items-center justify-center py-3 px-2 text-center border transition-all duration-300 rounded-sm group",
+                    isSelected ? "border-transparent text-white" : "border-platinum/15 text-platinum/60 hover:border-gold/30 hover:text-ivory"
                   )}
+                  style={isSelected ? { background: 'linear-gradient(135deg, #064feb, #f810bc)' } : {}}
                 >
-                  &#10003;
-                </div>
-              </div>
+                  <span className="text-[13px] font-serif font-light leading-tight">{s.size}&quot;</span>
+                  <span className={clsx("text-[10px] mt-0.5", isSelected ? "text-white/80" : "text-platinum/40")}>
+                    Rs {s.price.toLocaleString()}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* ─── Finish Selection ─── */}
+          <div className="reveal-prod text-[9px] tracking-[0.3em] uppercase text-platinum/50 border-b mb-5 pb-3" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+            Lamination Finish
+          </div>
+          <div className="reveal-prod flex gap-3 mb-10">
+            {FINISHES.map((f) => (
+              <button
+                key={f.id}
+                onClick={() => setSelectedFinish(f.id)}
+                className={clsx(
+                  "flex-1 py-3 px-3 text-center border rounded-sm transition-all duration-300 text-[10px] tracking-widest uppercase",
+                  selectedFinish === f.id ? "border-transparent text-white" : "border-platinum/15 text-platinum/50 hover:border-gold/30"
+                )}
+                style={selectedFinish === f.id ? { background: 'linear-gradient(135deg, #064feb55, #f810bc55)', borderColor: '#f810bc80' } : {}}
+              >
+                <div className="font-medium mb-0.5">{f.name}</div>
+                <div className="text-[8px] normal-case tracking-normal opacity-60">{f.desc}</div>
+              </button>
             ))}
           </div>
 
-          <div className="reveal-prod text-[9px] tracking-[0.3em] uppercase text-platinum border-b border-platinum/10 pb-3 mb-5">
-            Dimensions
+          {/* ─── Quantity ─── */}
+          <div className="reveal-prod text-[9px] tracking-[0.3em] uppercase text-platinum/50 border-b mb-5 pb-3" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+            Quantity
           </div>
-          <div className="reveal-prod grid grid-cols-2 gap-4 mb-12">
-            {[
-              { label: "Print Width", value: "60 cm" },
-              { label: "Print Height", value: "80 cm" },
-              { label: "Thickness", value: "8 mm" },
-              { label: "Mounting Style", value: "Frameless" },
-            ].map((dim, i) => (
-              <div key={i} className="border-t border-platinum/10 pt-3">
-                <div className="text-[9px] tracking-[0.2em] uppercase text-platinum/45 mb-1.5">
-                  {dim.label}
-                </div>
-                <div className="font-serif text-[22px] text-ivory font-light">{dim.value}</div>
-              </div>
-            ))}
+          <div className="reveal-prod flex items-center gap-5 mb-10">
+            <div className="flex items-center border border-platinum/15 rounded-full overflow-hidden">
+              <button
+                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                className="px-5 py-3 text-platinum/60 hover:text-ivory hover:bg-white/5 transition-all text-lg"
+              >−</button>
+              <span className="px-6 text-ivory font-medium text-sm">{quantity}</span>
+              <button
+                onClick={() => setQuantity(quantity + 1)}
+                className="px-5 py-3 text-platinum/60 hover:text-ivory hover:bg-white/5 transition-all text-lg"
+              >+</button>
+            </div>
+            <div className="text-platinum/50 text-sm">
+              Total: <span className="text-ivory font-medium">Rs {totalPrice.toLocaleString()} LKR</span>
+            </div>
           </div>
 
-          <div className="reveal-prod">
-            <button className="w-full relative overflow-hidden inline-flex justify-center border border-platinum/30 text-ivory text-[10px] font-medium tracking-[0.28em] uppercase px-12 py-5 transition-colors duration-400 group hover:border-gold hover:text-obsidian magnetic cursor-none">
-              <div className="absolute inset-x-0 bottom-0 bg-gold origin-bottom scale-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-y-100 h-full" />
-              <span className="relative z-10">Contact to Order</span>
-            </button>
+          {/* ─── CTA Buttons ─── */}
+          <div className="reveal-prod flex flex-col gap-3">
+            <a
+              href={`https://wa.me/94729644800?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-4 rounded-sm text-center text-white text-[11px] font-medium tracking-[0.25em] uppercase transition-all duration-300 hover:brightness-110 hover:shadow-[0_0_30px_rgba(248,16,188,0.35)]"
+              style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)' }}
+            >
+              Order via WhatsApp 💬
+            </a>
+            <a
+              href="mailto:artflics1@gmail.com"
+              className="w-full py-4 rounded-sm text-center text-ivory text-[11px] tracking-[0.25em] uppercase border border-platinum/15 hover:border-gold/40 hover:text-gold transition-all duration-300"
+            >
+              Email Inquiry
+            </a>
+          </div>
+
+          {/* ─── Assurance badges ─── */}
+          <div className="reveal-prod mt-8 flex flex-wrap gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+            {["✓ Premium Lamination", "✓ Frameless Finish", "✓ Island-Wide Delivery", "✓ Custom Retouching"].map((b) => (
+              <span key={b} className="text-[9px] tracking-widest uppercase text-platinum/35">{b}</span>
+            ))}
           </div>
         </div>
       </div>

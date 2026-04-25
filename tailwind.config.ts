@@ -19,6 +19,10 @@ const config: Config = {
           DEFAULT: "rgb(var(--color-gold) / <alpha-value>)",
           light: "rgb(var(--color-gold-light) / <alpha-value>)",
         },
+        neonBlue: {
+          DEFAULT: "rgb(var(--color-neon-blue) / <alpha-value>)",
+          light: "rgb(var(--color-neon-blue-light) / <alpha-value>)",
+        },
         ivory: "rgb(var(--color-ivory) / <alpha-value>)",
         cream: "rgb(var(--color-cream) / <alpha-value>)",
         // Shadcn UI colors

@@ -44,11 +44,16 @@ export default function MagneticButton({ children, className, href, onClick }: M
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={clsx(
-        "relative overflow-hidden inline-flex border border-platinum/30 text-ivory text-[10px] font-medium tracking-[0.28em] uppercase px-12 py-[18px] transition-colors duration-400 group hover:border-gold hover:text-obsidian magnetic cursor-none",
+        "relative overflow-hidden inline-flex border text-ivory text-[10px] font-medium tracking-[0.28em] uppercase px-12 py-[18px] transition-colors duration-400 group hover:text-obsidian magnetic cursor-none",
         className
       )}
+      style={{ borderColor: 'rgba(248,16,188,0.4)' }}
     >
-      <div className="absolute inset-0 bg-gold origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-x-100" />
+      {/* Gradient fill on hover */}
+      <div
+        className="absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-x-100"
+        style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)' }}
+      />
       <span className="relative z-10">{children}</span>
     </div>
   );

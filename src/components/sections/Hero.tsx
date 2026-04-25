@@ -151,12 +151,12 @@ export default function Hero() {
       />
       {/* Light Rays FX */}
       <LightRays
-        raysColor="#b8966a"
+        raysColor="#064feb"
         raysSpeed={0.8}
-        lightSpread={1.2}
-        rayLength={1.5}
-        mouseInfluence={0.08}
-        className="absolute inset-0 z-[5] opacity-60"
+        lightSpread={1.4}
+        rayLength={1.8}
+        mouseInfluence={0.1}
+        className="absolute inset-0 z-[5] opacity-50"
       />
       {/* Dark Overlay for better text readability */}
       <div className="absolute inset-0 z-10 bg-obsidian/60" />
@@ -165,13 +165,15 @@ export default function Hero() {
 
       {/* Content */}
       <div ref={textContentRef} className="relative z-20 text-center max-w-[900px] px-10">
-        <span className="reveal-hero block text-[10px] font-medium tracking-[0.35em] uppercase text-gold mb-7">
-          Premium Digital Edits & Print Artistry
+        <span className="reveal-hero block text-[10px] font-medium tracking-[0.35em] uppercase mb-7"
+          style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+        >
+          Digital Colour Lab
         </span>
         <h1 className="reveal-hero font-serif text-[clamp(72px,10vw,140px)] font-light leading-[0.9] tracking-[0.12em] text-ivory drop-shadow-2xl">
-          ART<em className="text-gold italic">FLICS</em>
+          ART<em style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontStyle: 'italic' }}>FLICS</em>
         </h1>
-        <div className="reveal-hero w-[60px] h-[1px] bg-gold mx-auto my-6" />
+        <div className="reveal-hero w-[60px] h-[1px] mx-auto my-6" style={{ background: 'linear-gradient(90deg, #064feb, #f810bc)' }} />
         <p className="reveal-hero font-serif text-lg font-light italic tracking-[0.12em] text-platinum mx-0 mt-7 mb-12">
           Let&apos;s Frame Your Memorable Moment
         </p>
@@ -202,7 +204,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
-        <div className="w-[1px] h-[60px] bg-gradient-to-b from-gold to-transparent animate-pulse" />
+        <div className="w-[1px] h-[60px] animate-pulse" style={{ background: 'linear-gradient(to bottom, #064feb, #f810bc)' }} />
         <span className="text-[9px] tracking-[0.25em] uppercase text-platinum/50">Scroll</span>
       </div>
     </section>
