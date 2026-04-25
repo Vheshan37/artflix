@@ -112,11 +112,17 @@
   }
 
   html {
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-outfit), sans-serif;
   }
 }
 
 @layer utilities {
+  .font-serif {
+    font-family: var(--font-cormorant), serif;
+  }
+  .font-sans {
+    font-family: var(--font-outfit), sans-serif;
+  }
   .text-balance {
     text-wrap: balance;
   }

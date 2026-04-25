@@ -140,24 +140,24 @@ export default function ProductDetails() {
             Back to Catalogue
           </Link>
 
-          <p className="reveal-prod text-[9px] tracking-[0.35em] uppercase text-gold mb-4">
+          <p className="reveal-prod text-[10px] tracking-[0.4em] uppercase text-gold mb-4 font-semibold">
             Digital Colour Lab · Premium Frameless Wall Art
           </p>
-          <h1 className="reveal-prod font-serif text-[clamp(36px,4vw,52px)] font-light leading-[1.1] text-ivory mb-2">
+          <h1 className="reveal-prod font-serif text-[clamp(36px,4vw,52px)] font-normal leading-[1.1] text-ivory mb-2">
             Frameless <em className="italic text-gold">Wall Art</em>
           </h1>
-          <p className="reveal-prod text-sm text-platinum/60 font-light mb-10 leading-relaxed max-w-[500px]">
+          <p className="reveal-prod text-sm text-platinum/60 font-normal mb-10 leading-relaxed max-w-[500px]">
             Expert digital retouching with premium lamination finish. High-definition
             print that transforms your precious moments into stunning frameless wall pieces.
           </p>
 
           {/* ─── Price Display ─── */}
           <div className="reveal-prod flex items-end gap-3 mb-10 p-5 rounded-sm border border-gold/10 bg-gold/[0.03]">
-            <span className="font-serif text-[44px] font-light text-ivory leading-none">
+            <span className="font-serif text-[44px] font-normal text-ivory leading-none">
               Rs {selectedSize.price.toLocaleString()}
             </span>
             <span className="text-platinum/50 text-sm mb-2">LKR / piece</span>
-            <span className="ml-auto text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full font-medium bg-gold text-obsidian">
+            <span className="ml-auto text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full font-bold bg-gold text-obsidian">
               {selectedSize.size}&quot;
             </span>
           </div>

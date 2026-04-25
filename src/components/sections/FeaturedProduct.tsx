@@ -44,13 +44,13 @@ export default function FeaturedProduct() {
 
         {/* Right: Product Details */}
         <div className="flex flex-col">
-          <span className="text-[10px] font-medium tracking-[0.3em] uppercase text-gold mb-4">
+          <span className="text-[11px] font-semibold tracking-[0.4em] uppercase text-gold mb-4">
             Digital Colour Lab
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-ivory font-light leading-tight mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-ivory font-normal leading-tight mb-4">
             Premium Frameless <br /> Wall Art <span className="text-3xl">📸✨</span>
           </h2>
-          <p className="text-xl text-platinum/80 mb-10 font-light">Rs 3,500.00 LKR</p>
+          <p className="text-xl text-platinum/80 mb-10 font-medium">Rs 3,500.00 LKR</p>
 
           <div className="mb-8">
             <h4 className="text-xs uppercase tracking-widest text-platinum/60 mb-4">Frame Size</h4>

@@ -119,22 +119,11 @@ const CoverPage = React.forwardRef<HTMLDivElement, Record<string, never>>((props
           style={{ border: "1px solid rgba(212,175,85,0.2)" }}
         />
 
-        <p
-          className="text-[9px] tracking-[0.4em] uppercase mb-3 opacity-60"
-          style={{ color: "#d4af55", fontFamily: "Georgia, serif" }}
-        >
+        <p className="font-sans text-[10px] font-semibold tracking-[0.4em] uppercase mb-3 opacity-60 text-gold">
           Artflics Studio
         </p>
 
-        <h2
-          className="font-light italic leading-none"
-          style={{
-            fontFamily: "Georgia, serif",
-            color: "#f0d890",
-            fontSize: "clamp(28px, 4vw, 44px)",
-            textShadow: "0 2px 12px rgba(0,0,0,0.6)",
-          }}
-        >
+        <h2 className="font-serif font-normal italic leading-none text-gold-light text-[clamp(32px,5vw,52px)] drop-shadow-lg">
           Photographs
         </h2>
 
@@ -143,19 +132,13 @@ const CoverPage = React.forwardRef<HTMLDivElement, Record<string, never>>((props
           style={{ background: "rgba(212,175,85,0.4)" }}
         />
 
-        <p
-          className="text-[9px] tracking-[0.25em] opacity-35"
-          style={{ color: "#d4af55", fontFamily: "Georgia, serif" }}
-        >
+        <p className="font-serif text-[10px] font-medium tracking-[0.3em] opacity-40 text-gold">
           2023 — 2024
         </p>
       </div>
 
       {/* Bottom label */}
-      <p
-        className="absolute bottom-7 w-full text-center text-[8px] tracking-[0.3em] uppercase opacity-20"
-        style={{ color: "#d4af55", fontFamily: "Georgia, serif" }}
-      >
+      <p className="absolute bottom-7 w-full text-center font-sans text-[9px] font-medium tracking-[0.4em] uppercase opacity-30 text-gold">
         Premium Prints &amp; Lamination
       </p>
     </div>
@@ -215,16 +198,10 @@ const PhotoPage = React.forwardRef<HTMLDivElement, { img: string; caption: strin
 
         {/* Caption */}
         <div className="mt-4 text-center relative z-10 flex-shrink-0">
-          <p
-            className="text-[13px] tracking-[0.1em] italic"
-            style={{ fontFamily: "Georgia, serif", color: "#5c3d1e" }}
-          >
+          <p className="font-serif text-[14px] font-medium tracking-[0.05em] italic text-[#5c3d1e]">
             {caption}
           </p>
-          <p
-            className="text-[10px] tracking-[0.25em] mt-1 opacity-45"
-            style={{ fontFamily: "Georgia, serif", color: "#8b5e3c" }}
-          >
+          <p className="font-sans text-[10px] font-semibold tracking-[0.2em] mt-1 opacity-50 text-[#8b5e3c]">
             {year}
           </p>
         </div>
@@ -286,12 +263,9 @@ const BackCover = React.forwardRef<HTMLDivElement, Record<string, never>>((props
         </div>
 
         {/* Bottom Logo Text */}
-        <div className="absolute bottom-4 w-full text-center">
-          <h3
-            className="font-serif text-xl tracking-[0.2em] uppercase"
-            style={{ color: "#f0d890", opacity: 0.9 }}
-          >
-            ART<span style={{ color: "#d4af55", fontStyle: "italic" }}>FLICS</span>
+        <div className="absolute bottom-6 w-full text-center">
+          <h3 className="font-serif text-2xl tracking-[0.25em] uppercase text-gold-light opacity-80">
+            ART<span className="text-gold italic">FLICS</span>
           </h3>
         </div>
       </div>
@@ -398,7 +372,7 @@ export default function AlbumView() {
     <section
       ref={sectionRef}
       id="album"
-      className="bg-[#080604] py-36 px-4 md:px-16 overflow-hidden"
+      className="bg-obsidian py-36 px-4 md:px-16 overflow-hidden"
     >
       {/* Section header */}
       <div className="max-w-[1100px] mx-auto mb-16 text-center">
