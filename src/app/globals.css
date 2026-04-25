@@ -35,7 +35,7 @@
     --sidebar-accent: oklch(0.97 0 0);
     --sidebar-accent-foreground: oklch(0.205 0 0);
     /* 
-     * ARTFLIX THEME COLORS (RGB components for Tailwind alpha support)
+     * ARTFLICS THEME COLORS (RGB components for Tailwind alpha support)
      * LIGHT MODE
      */
     --color-obsidian: 245 240 232; /* Ivory #f5f0e8 */
@@ -124,7 +124,7 @@
     --sidebar-accent: oklch(0.269 0 0);
     --sidebar-accent-foreground: oklch(0.985 0 0);
     /* 
-     * ARTFLIX THEME COLORS
+     * ARTFLICS THEME COLORS
      * DARK MODE (Original exact colors)
      */
     --color-obsidian: 10 10 10; /* #0A0A0A */

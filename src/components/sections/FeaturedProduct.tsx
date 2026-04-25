@@ -19,24 +19,24 @@ export default function FeaturedProduct() {
   return (
     <section className="bg-charcoal py-32 px-6 md:px-16 overflow-hidden">
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        
         {/* Left: Product Image */}
         <div className="relative group perspective-1000">
           <div className="absolute -inset-4 bg-gold/10 blur-2xl rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-2xl transition-transform duration-700 transform group-hover:rotate-y-2 group-hover:rotate-x-2 group-hover:scale-[1.02]">
-            <img 
-              src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1200&auto=format&fit=crop" 
+            <img
+              src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1200&auto=format&fit=crop"
               alt="Premium Frameless Wall Art"
               className="w-full h-full object-cover"
               crossOrigin="anonymous"
             />
             {/* Minimal overlay for depth */}
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 via-transparent to-transparent opacity-60" />
-            
+
             <div className="absolute bottom-10 left-10 text-ivory drop-shadow-lg">
               <h4 className="font-serif italic text-4xl mb-2">Happy Birthday</h4>
               <p className="text-[9px] uppercase tracking-widest opacity-80 max-w-[300px] leading-relaxed">
-                A small reminder of all our beautiful moments. Put everything else on hold, because today is all about you.
+                A small reminder of all our beautiful moments. Put everything else on hold, because
+                today is all about you.
               </p>
             </div>
           </div>
@@ -45,14 +45,12 @@ export default function FeaturedProduct() {
         {/* Right: Product Details */}
         <div className="flex flex-col">
           <span className="text-[10px] font-medium tracking-[0.3em] uppercase text-gold mb-4">
-            ARTFLIX EXCLUSIVE
+            ARTFLICS EXCLUSIVE
           </span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-ivory font-light leading-tight mb-4">
             Premium Frameless <br /> Wall Art <span className="text-3xl">📸✨</span>
           </h2>
-          <p className="text-xl text-platinum/80 mb-10 font-light">
-            Rs 3,500.00 LKR
-          </p>
+          <p className="text-xl text-platinum/80 mb-10 font-light">Rs 3,500.00 LKR</p>
 
           <div className="mb-8">
             <h4 className="text-xs uppercase tracking-widest text-platinum/60 mb-4">Frame Size</h4>
@@ -76,16 +74,14 @@ export default function FeaturedProduct() {
           <div className="mb-10">
             <h4 className="text-xs uppercase tracking-widest text-platinum/60 mb-4">Quantity</h4>
             <div className="flex items-center w-36 border border-platinum/20 rounded-full p-1 bg-obsidian/30">
-              <button 
+              <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
                 className="p-3 text-platinum/60 hover:text-gold transition-colors"
               >
                 <Minus size={14} />
               </button>
-              <span className="flex-1 text-center text-ivory text-sm font-medium">
-                {quantity}
-              </span>
-              <button 
+              <span className="flex-1 text-center text-ivory text-sm font-medium">{quantity}</span>
+              <button
                 onClick={() => setQuantity(quantity + 1)}
                 className="p-3 text-platinum/60 hover:text-gold transition-colors"
               >
@@ -113,7 +109,6 @@ export default function FeaturedProduct() {
               <ArrowRight size={14} />
             </button>
           </div>
-
         </div>
       </div>
     </section>

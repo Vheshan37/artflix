@@ -72,7 +72,7 @@ export default function Catalogue() {
           trigger: sectionRef.current,
           start: "top 85%",
         },
-      },
+      }
     );
 
     return () => {
@@ -101,34 +101,26 @@ export default function Catalogue() {
           </div>
 
           <div className="flex gap-8 reveal-cat flex-wrap">
-            {[
-              "All",
-              "Frameless Wall Art",
-              "Polaroid Packs",
-              "Custom Prints",
-              "Business Cards",
-            ].map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={clsx(
-                  "text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 pb-2 relative group magnetic",
-                  activeFilter === filter
-                    ? "text-ivory"
-                    : "text-platinum/45 hover:text-ivory",
-                )}
-              >
-                {filter}
-                <span
+            {["All", "Frameless Wall Art", "Polaroid Packs", "Custom Prints", "Business Cards"].map(
+              (filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
                   className={clsx(
-                    "absolute bottom-0 left-0 right-0 h-[1px] bg-gold transition-transform duration-300 origin-left",
-                    activeFilter === filter
-                      ? "scale-x-100"
-                      : "scale-x-0 group-hover:scale-x-100",
+                    "text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 pb-2 relative group magnetic",
+                    activeFilter === filter ? "text-ivory" : "text-platinum/45 hover:text-ivory"
                   )}
-                />
-              </button>
-            ))}
+                >
+                  {filter}
+                  <span
+                    className={clsx(
+                      "absolute bottom-0 left-0 right-0 h-[1px] bg-gold transition-transform duration-300 origin-left",
+                      activeFilter === filter ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    )}
+                  />
+                </button>
+              )
+            )}
           </div>
         </div>
 
@@ -140,7 +132,7 @@ export default function Catalogue() {
               href={`/products/${item.id}`}
               className={clsx(
                 "break-inside-avoid relative overflow-hidden group block cursor-none reveal-cat bg-obsidian cursor-target",
-                item.tall ? "aspect-[2/3]" : "aspect-[4/5]",
+                item.tall ? "aspect-[2/3]" : "aspect-[4/5]"
               )}
             >
               <div
@@ -153,21 +145,15 @@ export default function Catalogue() {
               </div>
 
               <div className="absolute inset-x-0 bottom-0 p-7 bg-gradient-to-t from-obsidian/90 to-transparent translate-y-4 opacity-70 transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">
-                <h4 className="font-serif text-[20px] font-light text-ivory mb-1">
-                  {item.title}
-                </h4>
-                <p className="text-[9px] tracking-[0.22em] uppercase text-gold">
-                  {item.frame}
-                </p>
+                <h4 className="font-serif text-[20px] font-light text-ivory mb-1">{item.title}</h4>
+                <p className="text-[9px] tracking-[0.22em] uppercase text-gold">{item.frame}</p>
               </div>
             </Link>
           ))}
         </div>
 
         <div className="mt-24 text-center reveal-cat">
-          <MagneticButton href="/catalogue">
-            View Full Catalogue &rarr;
-          </MagneticButton>
+          <MagneticButton href="/catalogue">View Full Catalogue &rarr;</MagneticButton>
         </div>
       </div>
     </section>

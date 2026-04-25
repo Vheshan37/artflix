@@ -39,9 +39,7 @@ export default function Cursor() {
 
   if (
     typeof navigator !== "undefined" &&
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent,
-    )
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
   )
     return null;
 
@@ -62,9 +60,7 @@ export default function Cursor() {
           x: mousePosition.x - 18,
           y: mousePosition.y - 18,
           scale: isHovered ? 2.2 : 1,
-          borderColor: isHovered
-            ? "rgba(184,150,106,0.7)"
-            : "rgba(184,150,106,0.4)",
+          borderColor: isHovered ? "rgba(184,150,106,0.7)" : "rgba(184,150,106,0.4)",
           opacity: isTargeting ? 0 : 1,
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.15 }}

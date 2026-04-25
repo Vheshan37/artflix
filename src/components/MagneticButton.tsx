@@ -24,7 +24,7 @@ export default function MagneticButton({ children, className, href, onClick }: M
       x,
       y,
       duration: 1,
-      ease: "power3.out"
+      ease: "power3.out",
     });
   };
 
@@ -34,7 +34,7 @@ export default function MagneticButton({ children, className, href, onClick }: M
       x: 0,
       y: 0,
       duration: 1,
-      ease: "elastic.out(1, 0.3)"
+      ease: "elastic.out(1, 0.3)",
     });
   };
 
@@ -54,8 +54,16 @@ export default function MagneticButton({ children, className, href, onClick }: M
   );
 
   if (href) {
-    return <Link href={href} className="inline-block" onClick={onClick}>{innerContent}</Link>;
+    return (
+      <Link href={href} className="inline-block" onClick={onClick}>
+        {innerContent}
+      </Link>
+    );
   }
 
-  return <button onClick={onClick} className="inline-block p-0 bg-transparent border-none outline-none">{innerContent}</button>;
+  return (
+    <button onClick={onClick} className="inline-block p-0 bg-transparent border-none outline-none">
+      {innerContent}
+    </button>
+  );
 }

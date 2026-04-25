@@ -27,8 +27,14 @@ export function ThemeToggle() {
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
       <div className="relative w-[18px] h-[18px]">
-        <Sun className="absolute inset-0 h-[18px] w-[18px] transition-all duration-500 scale-100 rotate-0 dark:-rotate-90 dark:scale-0 dark:opacity-0 origin-center" strokeWidth={1.5} />
-        <Moon className="absolute inset-0 h-[18px] w-[18px] transition-all duration-500 scale-0 rotate-90 dark:rotate-0 dark:scale-100 dark:opacity-100 origin-center" strokeWidth={1.5} />
+        <Sun
+          className="absolute inset-0 h-[18px] w-[18px] transition-all duration-500 scale-100 rotate-0 dark:-rotate-90 dark:scale-0 dark:opacity-0 origin-center"
+          strokeWidth={1.5}
+        />
+        <Moon
+          className="absolute inset-0 h-[18px] w-[18px] transition-all duration-500 scale-0 rotate-90 dark:rotate-0 dark:scale-100 dark:opacity-100 origin-center"
+          strokeWidth={1.5}
+        />
       </div>
       <span className="sr-only">Toggle theme</span>
     </button>

@@ -114,13 +114,16 @@ const CoverPage = React.forwardRef<HTMLDivElement, Record<string, never>>((props
           boxShadow: "0 0 0 3px rgba(212,175,85,0.12), inset 0 0 24px rgba(0,0,0,0.4)",
         }}
       >
-        <div className="absolute inset-[4px]" style={{ border: "1px solid rgba(212,175,85,0.2)" }} />
+        <div
+          className="absolute inset-[4px]"
+          style={{ border: "1px solid rgba(212,175,85,0.2)" }}
+        />
 
         <p
           className="text-[9px] tracking-[0.4em] uppercase mb-3 opacity-60"
           style={{ color: "#d4af55", fontFamily: "Georgia, serif" }}
         >
-          ARTFLIX Studio
+          Artflics Studio
         </p>
 
         <h2
@@ -135,7 +138,10 @@ const CoverPage = React.forwardRef<HTMLDivElement, Record<string, never>>((props
           Photographs
         </h2>
 
-        <div className="w-12 h-[1px] mx-auto mt-4 mb-3" style={{ background: "rgba(212,175,85,0.4)" }} />
+        <div
+          className="w-12 h-[1px] mx-auto mt-4 mb-3"
+          style={{ background: "rgba(212,175,85,0.4)" }}
+        />
 
         <p
           className="text-[9px] tracking-[0.25em] opacity-35"
@@ -235,13 +241,12 @@ const BackCover = React.forwardRef<HTMLDivElement, Record<string, never>>((props
       ref={ref}
       className="page w-full h-full flex flex-col items-center justify-center relative overflow-hidden select-none p-10 text-center bg-obsidian"
       style={{
-        background:
-          "linear-gradient(145deg, #2e1407 0%, #5c2e10 40%, #3a1a08 100%)",
+        background: "linear-gradient(145deg, #2e1407 0%, #5c2e10 40%, #3a1a08 100%)",
       }}
     >
       <div className="absolute inset-2" style={{ border: "1px solid rgba(212,175,85,0.25)" }} />
       <div className="absolute inset-4" style={{ border: "1px solid rgba(212,175,85,0.1)" }} />
-      
+
       {/* Floral background texture matching front cover */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -254,11 +259,14 @@ const BackCover = React.forwardRef<HTMLDivElement, Record<string, never>>((props
       <div className="relative z-10 flex flex-col items-center justify-center h-full pt-10">
         {/* Star Icon */}
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="mb-6 opacity-60">
-          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#d4af55" />
+          <path
+            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+            fill="#d4af55"
+          />
         </svg>
 
         {/* Inspirational Quote */}
-        <p 
+        <p
           className="font-serif italic text-lg leading-relaxed mb-10 max-w-[85%]"
           style={{ color: "#d4af55", opacity: 0.9 }}
         >
@@ -268,16 +276,22 @@ const BackCover = React.forwardRef<HTMLDivElement, Record<string, never>>((props
         <div className="w-16 h-[1px] mb-10" style={{ background: "rgba(212,175,85,0.3)" }} />
 
         {/* Contact Details */}
-        <div className="flex flex-col gap-4 text-[9px] tracking-[0.25em] uppercase" style={{ color: "#d4af55", opacity: 0.7 }}>
-          <p>hello@artflix.studio</p>
+        <div
+          className="flex flex-col gap-4 text-[9px] tracking-[0.25em] uppercase"
+          style={{ color: "#d4af55", opacity: 0.7 }}
+        >
+          <p>hello@artflics.studio</p>
           <p>+94 77 123 4567</p>
           <p>Colombo, Sri Lanka</p>
         </div>
 
         {/* Bottom Logo Text */}
         <div className="absolute bottom-4 w-full text-center">
-          <h3 className="font-serif text-xl tracking-[0.2em] uppercase" style={{ color: "#f0d890", opacity: 0.9 }}>
-            ART<span style={{ color: "#d4af55", fontStyle: "italic" }}>FLIX</span>
+          <h3
+            className="font-serif text-xl tracking-[0.2em] uppercase"
+            style={{ color: "#f0d890", opacity: 0.9 }}
+          >
+            ART<span style={{ color: "#d4af55", fontStyle: "italic" }}>FLICS</span>
           </h3>
         </div>
       </div>
@@ -288,8 +302,8 @@ BackCover.displayName = "BackCover";
 
 export default function AlbumView() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [emblaRef] = useEmblaCarousel({ 
-    align: "center", 
+  const [emblaRef] = useEmblaCarousel({
+    align: "center",
     containScroll: "trimSnaps",
     dragFree: true,
     loop: true,
@@ -333,20 +347,20 @@ export default function AlbumView() {
     gsap.to(".book-centering-container", {
       xPercent: xPercent,
       duration: 0.9,
-      ease: "power3.inOut"
+      ease: "power3.inOut",
     });
   }, [currentPage, totalPages]);
 
   // Mobile Stack Animation
   useEffect(() => {
     const mm = gsap.matchMedia();
-    
+
     mm.add("(max-width: 1023px)", () => {
       const cards = gsap.utils.toArray(".mobile-stack-card") as HTMLElement[];
-      
+
       cards.forEach((card, index) => {
         if (index === cards.length - 1) return; // Last card doesn't scale down
-        
+
         gsap.to(card, {
           scale: 0.9,
           filter: "brightness(0.5) blur(2px)",
@@ -355,7 +369,7 @@ export default function AlbumView() {
             start: "top 60%",
             end: "top 20%",
             scrub: true,
-          }
+          },
         });
       });
     });
@@ -382,8 +396,7 @@ export default function AlbumView() {
           The <em className="italic text-gold">Album</em>
         </h2>
         <p className="album-title-reveal mt-5 text-[13px] font-light text-platinum/50 tracking-[0.08em] max-w-[460px] mx-auto leading-relaxed">
-          A curated collection of captured moments — retouched and preserved for
-          eternity.
+          A curated collection of captured moments — retouched and preserved for eternity.
         </p>
       </div>
 
@@ -416,12 +429,7 @@ export default function AlbumView() {
 
             {/* Photo pages */}
             {PHOTOS.map((photo, i) => (
-              <PhotoPage
-                key={i}
-                img={photo.img}
-                caption={photo.caption}
-                year={photo.year}
-              />
+              <PhotoPage key={i} img={photo.img} caption={photo.caption} year={photo.year} />
             ))}
 
             {/* Back cover */}
@@ -469,27 +477,22 @@ export default function AlbumView() {
       </div>
 
       {/* Mobile/Tablet Alternative: Embla Carousel */}
-      <div 
-        className="lg:hidden mt-20 w-full overflow-hidden touch-pan-y" 
+      <div
+        className="lg:hidden mt-20 w-full overflow-hidden touch-pan-y"
         ref={emblaRef}
         data-lenis-prevent
       >
         <div className="flex select-none items-start">
           {PHOTOS.map((photo, i) => (
-            <div 
-              key={i} 
-              className="flex-[0_0_80%] sm:flex-[0_0_70%] min-w-0 pl-3"
-            >
-              <div 
-                className="relative aspect-[4/5] w-full bg-white p-3 shadow-2xl rounded-sm"
-              >
-                <img 
-                  src={photo.img} 
-                  alt={photo.caption} 
-                  className="w-full h-full object-cover" 
+            <div key={i} className="flex-[0_0_80%] sm:flex-[0_0_70%] min-w-0 pl-3">
+              <div className="relative aspect-[4/5] w-full bg-white p-3 shadow-2xl rounded-sm">
+                <img
+                  src={photo.img}
+                  alt={photo.caption}
+                  className="w-full h-full object-cover"
                   style={{ filter: "sepia(18%) contrast(1.05) brightness(0.95)" }}
                 />
-                
+
                 {/* Corner Tabs */}
                 {[
                   { cls: "top-2 left-2", clip: "polygon(0 0, 100% 0, 0 100%)" },
@@ -503,13 +506,13 @@ export default function AlbumView() {
                     style={{ background: "rgba(180,140,60,0.7)", clipPath: c.clip }}
                   />
                 ))}
-                
+
                 {/* Elegant Mobile Caption overlay */}
                 <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-center w-[85%] z-20">
-                  <div 
-                    className="bg-[#0A0A0A]/95 backdrop-blur-md px-4 py-3 shadow-xl border border-gold/20"
-                  >
-                    <p className="text-[14px] italic text-[#d4af55] font-serif mb-1 leading-tight">{photo.caption}</p>
+                  <div className="bg-[#0A0A0A]/95 backdrop-blur-md px-4 py-3 shadow-xl border border-gold/20">
+                    <p className="text-[14px] italic text-[#d4af55] font-serif mb-1 leading-tight">
+                      {photo.caption}
+                    </p>
                     <p className="text-[8px] tracking-[0.3em] text-[#c8c0b4]/50">{photo.year}</p>
                   </div>
                 </div>
@@ -517,7 +520,7 @@ export default function AlbumView() {
             </div>
           ))}
         </div>
-        
+
         <div className="mt-12 text-center">
           <p className="text-[9px] tracking-[0.4em] uppercase text-gold/40">
             Swipe to explore the gallery

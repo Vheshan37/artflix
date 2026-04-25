@@ -1,0 +1,9 @@
+.next
+dist
+build
+node_modules
+public
+package-lock.json
+.eslintrc.json
+.prettierrc
+next-env.d.ts

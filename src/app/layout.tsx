@@ -6,21 +6,21 @@ import Cursor from "@/components/Cursor";
 import TargetCursor from "@/components/TargetCursor";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const cormorant = Cormorant_Garamond({ 
-  subsets: ["latin"], 
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   variable: "--font-cormorant",
   style: ["normal", "italic"],
 });
 
-const montserrat = Montserrat({ 
+const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500"],
   variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
-  title: "ARTFLIX | Atelier of Fine Art",
+  title: "Artflics | Atelier of Fine Art",
   description: "Crafting Memories, Frame by Frame",
 };
 
