@@ -310,7 +310,24 @@ export default function AlbumView() {
   });
   const bookRef = useRef<FlipBookRef | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = PHOTOS.length + 2; // cover + photos + back cover
+  const totalPages = PHOTOS.length + 2;
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    audioRef.current = new Audio("/flip-sound.mp3");
+    audioRef.current.volume = 0.25;
+  }, []);
+
+  const playFlipSound = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch((err) => console.log("Audio play prevented:", err));
+    }
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -404,6 +421,8 @@ export default function AlbumView() {
       <div className="album-book-wrapper hidden lg:flex flex-col items-center gap-10 overflow-hidden px-4 md:px-0">
         <div
           className="book-centering-container w-full max-w-[960px] mx-auto py-10"
+          onMouseDown={playFlipSound}
+          onTouchStart={playFlipSound}
           style={{
             filter: "drop-shadow(0 40px 80px rgba(0,0,0,0.85))",
           }}
@@ -421,7 +440,7 @@ export default function AlbumView() {
             mobileScrollSupport={false}
             showNavigationButtons={false}
             showPageNumbers={false}
-            onPageChange={(page: number) => setCurrentPage(page)}
+            onPageChange={handlePageChange}
             className="mx-auto"
           >
             {/* Cover */}
@@ -440,7 +459,10 @@ export default function AlbumView() {
         {/* Navigation Controls */}
         <div className="flex items-center gap-10">
           <button
-            onClick={() => bookRef.current?.flipPrev()}
+            onClick={() => {
+              playFlipSound();
+              bookRef.current?.flipPrev();
+            }}
             className="flex items-center gap-3 text-[10px] tracking-[0.25em] uppercase text-platinum/60 hover:text-gold transition-all duration-300 group"
           >
             <span className="inline-block w-8 h-[1px] bg-current transition-all duration-300 group-hover:w-12" />
@@ -463,7 +485,10 @@ export default function AlbumView() {
           </div>
 
           <button
-            onClick={() => bookRef.current?.flipNext()}
+            onClick={() => {
+              playFlipSound();
+              bookRef.current?.flipNext();
+            }}
             className="flex items-center gap-3 text-[10px] tracking-[0.25em] uppercase text-platinum/60 hover:text-gold transition-all duration-300 group"
           >
             <ShinyText text="Next" speed={3} color="inherit" shineColor="#f0d890" />
